@@ -1,19 +1,30 @@
 # View Wireframes
 
-## New User
+## HomePage
+![root]
+
+## NewUser
 ![new-user]
 
-## New Session
+## NewSession
 ![new-session]
 
-## ProjectsIndex / ProjectDetail / NewProjectForm
-![projects]
+## ProjectsIndex
+![projects-index]
 
-## UserProjectsIndex / UserProjectDetail
-![projects]
+## ProjectDetail
+![project-detail]
 
+## CategoriesIndex
+![categories-index]
+
+## NewProjectForm
+![new-project-form]
+
+[root]: ./wireframes/root.png
 [new-user]: ./wireframes/new_user.png
 [new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[projects-index]: ./wireframes/root_projects_index.png
+[project-detail]: ./wireframes/project_detail.png
+[categories-index]: ./wireframes/root_categories_index.png
+[new-project-form]: ./wireframes/new_project_form.png
