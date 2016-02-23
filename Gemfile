@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'annotate'
+
+gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

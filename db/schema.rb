@@ -11,10 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223033402) do
+ActiveRecord::Schema.define(version: 20160223192231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["name"], name: "index_categories_on_name", using: :btree
+
+  create_table "project_backings", force: :cascade do |t|
+    t.integer  "project_id", null: false
+    t.integer  "backer_id",  null: false
+    t.integer  "pledge_amt", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_backings", ["backer_id"], name: "index_project_backings_on_backer_id", using: :btree
+  add_index "project_backings", ["project_id"], name: "index_project_backings_on_project_id", using: :btree
+
+  create_table "project_categories", force: :cascade do |t|
+    t.integer  "category_id", null: false
+    t.integer  "project_id",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "project_categories", ["category_id"], name: "index_project_categories_on_category_id", using: :btree
+  add_index "project_categories", ["project_id"], name: "index_project_categories_on_project_id", using: :btree
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.string   "category",    null: false
+    t.integer  "creator_id",  null: false
+    t.text     "description", null: false
+    t.integer  "goal_amt",    null: false
+    t.date     "start_date",  null: false
+    t.date     "deadline",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "tagline",     null: false
+  end
+
+  add_index "projects", ["category"], name: "index_projects_on_category", using: :btree
+  add_index "projects", ["creator_id"], name: "index_projects_on_creator_id", using: :btree
+  add_index "projects", ["title"], name: "index_projects_on_title", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

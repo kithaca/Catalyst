@@ -38,19 +38,19 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [x] create new project
+- [x] create `User` model
+- [x] authentication
+- [x] user signup/signin pages
+- [x] blank landing page after signin
 
 ### Phase 2: Project model, API, basic APIUtil, and Flux scaffold (2 days)
 
 **Objective:** Projects can be created, read, edited and destroyed through the API.
 
-- [ ] create `Project` model
+- [x] create `Project` model
 - [ ] create `Update` model
-- [ ] seed the database with a small amount of test data
+- [x] seed the database with a small amount of test data
 - [ ] CRUD API for projects (`ProjectsController`, `UpdatesController`)
 - [ ] jBuilder views
 - [ ] set up Webpack & Flux scaffold
@@ -90,6 +90,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
+- [ ] Detailed user profile pages (can link from project show page)
 - [ ] Pagination / infinite scroll for Projects Index
 - [ ] Reminders/notifications for project updates
 - [ ] "Rewards" for being a philanthropist
