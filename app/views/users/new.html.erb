@@ -1,0 +1,24 @@
+<div class="login-screen">
+  <span class="auth">
+    <h2>Sign Up</h2>
+    <form action="<%= users_url %>" method="POST">
+
+      <label>Username
+        <input type="text" name="user[username]" value="">
+      </label>
+      <br>
+      <label>Email
+        <input type="email" name="user[email]" value="">
+      </label>
+      <br>
+      <label>Password
+        <input type="password" name="user[password]" value="">
+      </label>
+      <br>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+      <input type="submit" value="Sign Up">
+
+    </form>
+  </span>
+</div>

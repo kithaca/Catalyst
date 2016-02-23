@@ -13,3 +13,48 @@
  *= require_tree .
  *= require_self
  */
+
+html, body, header, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  color: black;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: bold;
+  background: white;
+  color: black;
+}
+
+.login-screen {
+  display: block;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  background: gray;
+  opacity: 50%;
+  width: 100%;
+}
+
+.auth {
+  display: inline-block;
+  text-align: center;
+  background: white;
+  color: blue;
+  padding: 5px;
+  margin: 20px;
+  position: relative;
+  z-index: 100;
+  width: 400px;
+  height: 380px;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
