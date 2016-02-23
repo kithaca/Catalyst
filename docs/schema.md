@@ -17,12 +17,30 @@ description | text      | not null
 category    | text      | not null, indexed
 collab      | boolean   | not null
 goal        | integer   | not null
+start_date  | date      | not null
 deadline    | date      | not null
-author_id   | integer   | not null, foreign key (references users) indexed
+author_id   | integer   | not null, foreign key (references users), indexed
 
-## categories (?)
+## project_backers
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+project_id      | integer   | not null, foreign key, indexed
+user_id         | integer   | not null, foreign key, indexed
+pledge_amt      | integer   | not null
+
+## updates
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+project_id      | integer   | not null, foreign key, indexed
+user_id         | integer   | not null, foreign key, indexed
+title           | string    | not null
+details         | text      |
+
+## categories
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-title       | string    | not null
+name        | string    | not null
 project_id  | integer   | foreign key, indexed

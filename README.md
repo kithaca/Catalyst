@@ -13,9 +13,11 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Explore and fund existing research projects
+- [ ] Explore by projects by category
+- [ ] Search projects
+- [ ] Fund projects
 - [ ] Create new research projects
-- [ ] Follow/track projects of interest
+- [ ] Create updates to research projects
 
 ## Design Docs
 * [View Wireframes][views]
@@ -47,42 +49,37 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 **Objective:** Projects can be created, read, edited and destroyed through the API.
 
 - [ ] create `Project` model
+- [ ] create `Update` model
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for projects (`ProjectsController`)
+- [ ] CRUD API for projects (`ProjectsController`, `UpdatesController`)
 - [ ] jBuilder views
 - [ ] set up Webpack & Flux scaffold
 - [ ] set up `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
 
-### Phase 3: Flux Architecture and Router (3 days)
+### Phase 3: Flux Architecture and Router (2 days)
 
-**Objective:** Projects can be created, read, edited and destroyed through the user interface.
+**Objective:** Projects can be created, read, edited and destroyed through the user interface. Project updates can be created.
 
 - [ ] set up the flux loop with skeleton files
 - [ ] set up React Router
-- [ ] search page functionality
 - implement each project component, building out the flux loop as needed.
   - [ ] `ProjectsIndex`
   - [ ] `ProjectIndexItem`
   - [ ] `NewProjectForm`
+  - [ ] `NewUpdateForm`
 
-### Phase 4: Styling (1 day)
+### Phase 4: Search (1 day)
+- [ ] search should return matching results
+- [ ] create React structure for search (store)
+
+### Phase 5: Userpage customization/Styling (1 day)
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
 - [ ] make signup/signin appear on top of home page
-- [ ] make home page photo scrollable
+- [ ] customize individual userpage so users can view projects they have backed and created
 - [ ] polish styles
-
-### Phase 5: Userpage customization (1 day)
-
-**Objective:** Users can view projects they have backed, projects they have created, and projects they have followed
-
-- [ ] Create user specific ProjectStore (?)
-- Use CSS to style new views
-
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
 
 ### Phase 6: Styling Cleanup and Seeding (1 day)
 
@@ -94,7 +91,8 @@ which has its own `Index` view.
 
 ### Bonus Features (TBD)
 - [ ] Pagination / infinite scroll for Projects Index
-- [ ] Reminders/notifications for followed projects
+- [ ] Reminders/notifications for project updates
+- [ ] "Rewards" for being a philanthropist
 - [ ] "Suggested" or "favorite" projects
 
 [phase-one]: ./docs/phases/phase1.md

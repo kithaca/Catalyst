@@ -19,8 +19,7 @@
   - ProjectDetail
 * NewProjectForm
 * BackedProjects
-* StartedProjects
-* FollowedProjects (optional)
+* CreatedProjects
 
 ### Stores
 * Project

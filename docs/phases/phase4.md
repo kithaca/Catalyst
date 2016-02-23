@@ -1,4 +1,6 @@
-# Phase 4: Styling (1 day)
+### Phase 4: Search (1 day)
+
+I need help here!
 
 ## Rails
 ### Models

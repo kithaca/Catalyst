@@ -25,3 +25,11 @@
 - `GET /api/projects/:id`
 - `PATCH /api/projects/:id`
 - `DELETE /api/projects/:id`
+
+### User-Specific Projects
+- `GET /api/:id/created`
+- `POST /api/:id/created`
+- `PATCH /api/:id/created`
+- `DELETE /api/:id/created`
+- `GET /api/:id/backed`
+- `POST /api/:id/backed`

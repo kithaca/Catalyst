@@ -8,6 +8,8 @@ Holds all persisted project data.
 - `receiveAllProjects`
 - `receiveOneProject`
 - `destroyProject`
+- `receiveAllCreatedProjects`
+- `receiveAllBackedProjects`
 
 ##### Listeners:
 - `ProjectsIndex` (passes to `ProjectIndexItem` via props)
@@ -22,18 +24,6 @@ Holds un-persisted note data to send to the API.
 
 ##### Listeners:
 - `ProjectForm`
-
-### UserProjectStore
-
-Holds user-specific projects
-
-##### Actions:
-- `receiveAllCreatedProjects`
-- `receiveAllFollowedProjects`
-- `receiveAllBackedProjects`
-
-##### Listeners:
-- `UserProjectsIndex`
 
 ### SearchStore
 

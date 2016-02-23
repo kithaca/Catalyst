@@ -1,4 +1,4 @@
-# Phase 3: Flux Architecture and Router (3 days)
+# Phase 3: Flux Architecture and Router (2 days)
 
 ## Rails
 ### Models
