@@ -1,2 +1,5 @@
 # ignore bundle.js
 bundle.js
+
+# ignore kitten
+kitten.png
