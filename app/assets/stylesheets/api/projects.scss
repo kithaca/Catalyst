@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .project_index {
-  position: relative;
+  position: fixed;
+  width: 100%;
   display: block;
   margin: 0 auto;
   border: 10px solid black;
@@ -22,51 +23,64 @@
   position: relative;
   width: 22%;
   height: 600px;
-  border: 5px solid blue;
-  padding: 10px;
-  margin: 5px;
+  border: 1px solid gainsboro;
+  margin: 20px;
   overflow: hidden;
+  border-radius: 10px;
+
 }
 
 .proj_title {
   font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  display: block;
+  color: blue;
+
 }
 
 .proj_category {
   display: block;
   padding: 10px;
+  margin: 10px;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: normal;
   color: white;
   background-color: mediumaquamarine;
   text-align: center;
+  border-radius: 25px;
 }
 
 .proj_tagline {
+  padding: 0px 10px;
   font-size: 14px;
   font-weight: normal;
   color: blue;
 }
 
 .proj_descr {
+  margin: 10px;
   font-size: 14px;
   font-weight: normal;
   color: blue;
 }
 
 .proj_goal {
+  margin: 10px;
   font-size: 14px;
   font-weight: normal;
   color: blue;
 }
 
 .proj_start {
+  margin: 10px;
   font-size: 14px;
   font-weight: normal;
   color: blue;
 }
 
 .proj_deadline {
+  margin: 10px;
   font-size: 14px;
   font-weight: normal;
   color: blue;
@@ -75,4 +89,5 @@
 .thumbnail {
   margin: 0 auto;
   width: 100%;
+  padding: 0;
 }
