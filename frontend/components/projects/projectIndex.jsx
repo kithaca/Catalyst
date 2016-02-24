@@ -18,9 +18,11 @@ var ProjectIndex = React.createClass({
   },
 
   render: function () {
-    debugger;
+
+
+
     return(
-      <ul>
+      <ul className="project_index group">
         {this.state.projects.map(function (project) {
           return (<ProjectIndexItem key={project.id} project={project} />);
         })}

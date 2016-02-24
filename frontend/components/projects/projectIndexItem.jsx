@@ -12,13 +12,16 @@ var ProjectIndexItem = React.createClass({
   render: function () {
     return(
       <li className="project_index_item">
-        <p>Title: {this.props.project.title}</p>
-        <p>Category: {this.props.project.category}</p>
-        <p>Tagline: {this.props.project.tagline}</p>
-        <p>Description: {this.props.project.description}</p>
-        <p>Funding Goal: {this.props.project.goal_amt}</p>
-        <p>Start: {this.props.project.start_date}</p>
-        <p>Deadline: {this.props.project.deadline}</p>
+        <img className="thumbnail"
+                   src="http://sfgov.org/acc/ftp/uploadedimages/acc/Adoption_Center/fostercare/Blue%2063008(1).jpg"
+                   alt="kitten" />
+        <h4 className="proj_category">{this.props.project.category}</h4>
+        <h5 className="proj_title">{this.props.project.title}</h5>
+        <h6 className="proj_tagline">{this.props.project.tagline}</h6>
+        <p className="proj_descr">{this.props.project.description}</p>
+        <h4 className="proj_goal">Funding Goal: ${this.props.project.goal_amt}</h4>
+        <h6 className="proj_start">Start: {this.props.project.start_date}</h6>
+        <h6 className="proj_deadline">Deadline: {this.props.project.deadline}</h6>
       </li>
     );
   }

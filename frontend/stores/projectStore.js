@@ -25,7 +25,6 @@ ProjectStore.__onDispatch = function (payload) {
 ProjectStore.all = function () {
   var projectArr = [];
   Object.keys(_projects).forEach(function (key) {
-    debugger;
     projectArr.push(_projects[key]);
   });
 

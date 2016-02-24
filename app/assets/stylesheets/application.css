@@ -28,6 +28,7 @@ body {
   font-weight: bold;
   background: white;
   color: black;
+  position: relative;
 }
 
 .login-screen {
@@ -51,14 +52,4 @@ body {
   z-index: 100;
   width: 400px;
   height: 380px;
-}
-
-.group:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-.project_index_item {
-  
 }

@@ -1,3 +1,78 @@
 // Place all the styles related to the api/projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.project_index {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  border: 10px solid black;
+  width: auto;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.project_index_item {
+  float: left;
+  display: inline-block;
+  position: relative;
+  width: 22%;
+  height: 600px;
+  border: 5px solid blue;
+  padding: 10px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+.proj_title {
+  font-size: 16px;
+}
+
+.proj_category {
+  display: block;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: mediumaquamarine;
+  text-align: center;
+}
+
+.proj_tagline {
+  font-size: 14px;
+  font-weight: normal;
+  color: blue;
+}
+
+.proj_descr {
+  font-size: 14px;
+  font-weight: normal;
+  color: blue;
+}
+
+.proj_goal {
+  font-size: 14px;
+  font-weight: normal;
+  color: blue;
+}
+
+.proj_start {
+  font-size: 14px;
+  font-weight: normal;
+  color: blue;
+}
+
+.proj_deadline {
+  font-size: 14px;
+  font-weight: normal;
+  color: blue;
+}
+
+.thumbnail {
+  margin: 0 auto;
+  width: 100%;
+}
