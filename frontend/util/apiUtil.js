@@ -9,6 +9,15 @@ var ApiUtil = {
         ApiActions.receiveAllProjects(projects);
       }
     });
+  },
+
+  fetchCurrentUser: function () {
+    $.ajax({
+      url: '/api/session/current',
+      success: function (currentUser) {
+        ApiActions.receiveCurrentUser(currentUser);
+      }
+    });
   }
 
 };

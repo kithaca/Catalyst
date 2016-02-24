@@ -17,10 +17,11 @@ var ProjectIndex = React.createClass({
     this.setState({ projects: ProjectStore.all() });
   },
 
+  componentWillUnmount: function () {
+    this.projectListener.remove();
+  },
+
   render: function () {
-
-
-
     return(
       <ul className="project_index group">
         {this.state.projects.map(function (project) {

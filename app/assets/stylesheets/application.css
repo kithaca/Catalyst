@@ -24,7 +24,7 @@ html, body, header, ul, li {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   background: white;
   color: black;
