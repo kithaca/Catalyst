@@ -3,7 +3,7 @@ var Store = require('flux/utils').Store;
 var SessionStore = new Store(AppDispatcher);
 var UserConstants = require('../constants/userConstants');
 
-var _currentUser;
+var _currentUser = {};
 
 var updateCurrentUser = function (currentUser) {
   _currentUser = currentUser;

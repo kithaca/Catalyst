@@ -24,7 +24,7 @@ var CurrentUser = React.createClass({
   },
 
   render: function () {
-    if (this.state.currentUser) {
+    if (Object.keys(this.state.currentUser).length > 0) {
       return (
         <div>
           <h1>Welcome, {this.state.currentUser.username}!</h1>

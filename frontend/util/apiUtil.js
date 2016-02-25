@@ -25,6 +25,10 @@ var ApiUtil = {
       url: 'api/users',
       method: 'POST',
       data: user,
+      error: function () {
+        debugger;
+        console.log("Could not create new user.");
+      },
       success: function (data) {
         ApiActions.receiveCurrentUser(data);
 
@@ -59,7 +63,6 @@ var ApiUtil = {
         ApiActions.clearSession();
         callback();
         console.log("logout successful");
-        debugger;
       }
     });
   }

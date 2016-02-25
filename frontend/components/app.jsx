@@ -38,9 +38,7 @@ var App = React.createClass({
 
   logUserOut: function () {
     var that = this;
-    debugger;
     ApiUtil.logout(function () {
-      debugger;
       console.log("logging out");
       that.history.pushState(null, "/", {});
     });
@@ -50,7 +48,6 @@ var App = React.createClass({
     var loginOrOut;
     var signUp;
     if (this.state.loggedIn) {
-      debugger;
       loginOrOut = <div onClick={this.logUserOut}><Link to="logout">Log Out</Link></div>;
     } else {
       loginOrOut = <div><Link to="login">Log In</Link></div>;

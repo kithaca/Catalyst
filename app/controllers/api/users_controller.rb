@@ -8,10 +8,10 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in!(@user)
-      render json: "New user created."
+      render json: {message: "New user created."}
     else
       flash.now[:errors] = @user.errors.full_messages
-      render json: "ERROR"
+      render json: {messsage: "ERROR"}
     end
   end
 
