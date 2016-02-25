@@ -11,12 +11,10 @@ class Api::SessionsController < ApplicationController
 
     if user
       log_in!(user)
-      # render json: {message: "logged in"}
-
-      # redirect_to root_url
+      # debugger;
+      render json: {}
     else
-      flash.now[:errors] = ["Invalid username/password combination."]
-      render json: {message: "ERROR"}
+      # render json: {}
     end
   end
 
@@ -25,7 +23,7 @@ class Api::SessionsController < ApplicationController
       @user = current_user
       # render json: {message: ""}
     else
-
+      render json: {}
     end
   end
 

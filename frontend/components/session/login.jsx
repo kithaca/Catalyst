@@ -29,51 +29,39 @@ var Login = React.createClass({
     that.setState(that.blankForm);
   },
 
-  // componentDidMount: function () {
-  //   this.newUserListener = SessionStore.addListener(this._userChange);
-  //   this.setState({ show: true });
-  // },
-  //
-  // _userChange: function () {
-  //   this.setState({ show: false });
-  // },
-  //
-  // componentWillUnmount: function () {
-  //   this.newUserListener.remove();
-  // },
-
   render: function () {
     return(
-      <form className="login-user" onSubmit={this.logInUser}>
-        <div>
-          <label>
-            Username
-            <input
-              type="text"
-              valueLink={this.linkState("username")}
-              />
-          </label>
-        </div>
+      <div className={this.props.display}>
+        <form className="login-user" onSubmit={this.logInUser}>
+          <div>
+            <label>
+              Username
+              <input
+                type="text"
+                valueLink={this.linkState("username")}
+                />
+            </label>
+          </div>
 
-        <br />
+          <br />
 
-        <div>
-          <label>
-            Password
-            <input
-              type="password"
-              valueLink={this.linkState("password")}
-              />
-          </label>
-        </div>
+          <div>
+            <label>
+              Password
+              <input
+                type="password"
+                valueLink={this.linkState("password")}
+                />
+            </label>
+          </div>
 
 
-        <br></br>
+          <br></br>
 
-        <button className="login-button">Log In</button>
+          <button className="login-button">Log In</button>
 
-      </form>
-
+        </form>
+      </div>
 
     );
   }

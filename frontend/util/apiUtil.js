@@ -26,7 +26,6 @@ var ApiUtil = {
       method: 'POST',
       data: user,
       error: function () {
-        debugger;
         console.log("Could not create new user.");
       },
       success: function (data) {

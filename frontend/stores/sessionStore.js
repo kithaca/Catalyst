@@ -28,7 +28,6 @@ SessionStore.__onDispatch = function (payload) {
 
 
     case UserConstants.CLEAR_SESSION:
-      debugger;
       clearSession();
       SessionStore.__emitChange();
       break;

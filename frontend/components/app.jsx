@@ -3,6 +3,7 @@ var History = require('react-router').History;
 var Link = require('react-router').Link;
 var SessionStore = require('../stores/sessionStore');
 var ApiUtil = require('../util/apiUtil');
+var Login = require('./session/login');
 
 
 var App = React.createClass({
@@ -10,7 +11,8 @@ var App = React.createClass({
   mixins: [History],
 
   getInitialState: function () {
-    return { currentUser: SessionStore.currentUser(), loggedIn: false };
+    return { currentUser: SessionStore.currentUser(), loggedIn: false,
+      showLoginForm: false };
   },
 
   componentDidMount: function () {
@@ -36,6 +38,14 @@ var App = React.createClass({
     this.currentUserListener.remove();
   },
 
+  toggleLogin: function () {
+    this.setState({ showLoginForm: true });
+  },
+
+  unToggleLogin: function () {
+    this.setState({ showLoginForm: false });
+  },
+
   logUserOut: function () {
     var that = this;
     ApiUtil.logout(function () {
@@ -44,16 +54,26 @@ var App = React.createClass({
     });
   },
 
+  // componentDidUpdate: function () {
+  //   this.unToggleLogin();
+  // },
+
   render: function () {
+
+
     var loginOrOut;
     var signUp;
     if (this.state.loggedIn) {
       loginOrOut = <div onClick={this.logUserOut}><Link to="logout">Log Out</Link></div>;
     } else {
-      loginOrOut = <div><Link to="login">Log In</Link></div>;
+      loginOrOut = <div onClick={this.toggleLogin}>Log In</div>;
       signUp = <Link to="signup">Create Account</Link>;
     }
-
+    var show = "hidden";
+    if (this.state.showLoginForm) {
+      show = "session-form";
+    }
+    // debugger;
     return(
       <div className="app">
         <ul>
@@ -62,6 +82,9 @@ var App = React.createClass({
           <li>{loginOrOut}</li>
           <li>{signUp}</li>
         </ul>
+        <div>
+          <Login display={show} />
+        </div>
         {this.props.children}
       </div>
     );
