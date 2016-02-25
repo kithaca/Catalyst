@@ -4,7 +4,7 @@ var ApiUtil = require('../../util/apiUtil');
 var History = require('react-router').History;
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 
-var Login = React.createClass({
+var Signup = React.createClass({
   mixins: [History, LinkedStateMixin],
 
   blankForm: {
@@ -24,24 +24,11 @@ var Login = React.createClass({
     Object.keys(that.state).forEach(function (key) {
       user[key] = that.state[key];
     });
-    ApiUtil.login(user, function () {
+    ApiUtil.createUser(user, function () {
       that.history.pushState(null, "/", {});
     });
     that.setState(that.blankForm);
   },
-
-  // componentDidMount: function () {
-  //   this.newUserListener = SessionStore.addListener(this._userChange);
-  //   this.setState({ show: true });
-  // },
-  //
-  // _userChange: function () {
-  //   this.setState({ show: false });
-  // },
-  //
-  // componentWillUnmount: function () {
-  //   this.newUserListener.remove();
-  // },
 
   render: function () {
     return(
@@ -52,6 +39,18 @@ var Login = React.createClass({
             <input
               type="text"
               valueLink={this.linkState("username")}
+              />
+          </label>
+        </div>
+
+        <br></br>
+
+        <div>
+          <label>
+            Email
+            <input
+              type="email"
+              valueLink={this.linkState("email")}
               />
           </label>
         </div>
@@ -71,7 +70,7 @@ var Login = React.createClass({
 
         <br></br>
 
-        <button className="login-button">Create Account</button>
+        <button className="signup-button">Create Account</button>
 
       </form>
 
@@ -82,4 +81,4 @@ var Login = React.createClass({
 });
 
 
-module.exports = Login;
+module.exports = Signup;

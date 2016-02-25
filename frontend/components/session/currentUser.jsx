@@ -1,5 +1,5 @@
 var React = require('react');
-var sessionStore = require('../../stores/sessionStore');
+var SessionStore = require('../../stores/sessionStore');
 var ApiUtil = require('../../util/apiUtil');
 var History = require('react-router').History;
 
@@ -7,16 +7,16 @@ var CurrentUser = React.createClass({
   mixins: [History],
 
   getInitialState: function () {
-    return { currentUser: sessionStore.currentUser() };
+    return { currentUser: SessionStore.currentUser() };
   },
 
   componentDidMount: function () {
-    this.currentUserListener = sessionStore.addListener(this._userChange);
+    this.currentUserListener = SessionStore.addListener(this._userChange);
     ApiUtil.fetchCurrentUser();
   },
 
   _userChange: function () {
-    this.setState({ currentUser: sessionStore.currentUser() });
+    this.setState({ currentUser: SessionStore.currentUser() });
   },
 
   componentWillUnmount: function () {

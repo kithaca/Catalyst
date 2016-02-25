@@ -17,6 +17,12 @@ var ApiActions = {
     });
   },
 
+  clearSession: function () {
+    Dispatcher.dispatch({
+      actionType: UserConstants.CLEAR_SESSION,
+    });
+  },
+
   receiveAllUsers: function (users) {
     Dispatcher.dispatch({
       actionType: UserConstants.ALL_USERS_RECEIVED,

@@ -8,12 +8,17 @@ var IndexRoute = require('react-router').IndexRoute;
 
 var CurrentUser = require('./components/session/currentUser');
 var App = require('./components/app');
+var Login = require('./components/session/login');
+var Signup = require('./components/session/signup');
 
 
 var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={ProjectIndex}/>
     <Route path="current" component={CurrentUser}></Route>
+    <Route path="login" component={Login}></Route>
+    <Route path="logout"></Route>
+    <Route path="signup" component={Signup}></Route>
   </Route>
 );
 

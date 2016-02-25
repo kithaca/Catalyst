@@ -3,17 +3,19 @@ class Api::SessionsController < ApplicationController
   end
 
   def create
+    # debugger
     user = User.find_by_credentials(
-      params[:user][:username],
-      params[:user][:password]
+      params[:username],
+      params[:password]
     )
 
     if user
       log_in!(user)
-      redirect_to root_url
+      render json: user
+      # redirect_to root_url
     else
       flash.now[:errors] = ["Invalid username/password combination."]
-      render :new
+      render json: "ERROR"
     end
   end
 
@@ -27,7 +29,6 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     log_out!
-    redirect_to new_session_url
   end
 
 end
