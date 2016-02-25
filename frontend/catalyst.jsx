@@ -16,7 +16,6 @@ var routes = (
   <Route path="/" component={App}>
     <IndexRoute component={ProjectIndex}/>
     <Route path="current" component={CurrentUser}></Route>
-    <Route path="login" component={Login}></Route>
     <Route path="logout"></Route>
     <Route path="signup" component={Signup}></Route>
   </Route>

@@ -24,44 +24,53 @@ var Login = React.createClass({
       user[key] = that.state[key];
     });
     ApiUtil.login({user: user}, function () {
-      that.history.pushState(null, "/", {});
+      // that.history.pushState(null, "/", {});
+      that.props.toggleLogin();
     });
-    that.setState(that.blankForm);
   },
 
   render: function () {
     return(
-      <div className={this.props.display}>
-        <form className="login-user" onSubmit={this.logInUser}>
-          <div>
-            <label>
-              Username
-              <input
-                type="text"
-                valueLink={this.linkState("username")}
-                />
-            </label>
-          </div>
+      <div>
 
-          <br />
-
-          <div>
-            <label>
-              Password
-              <input
-                type="password"
-                valueLink={this.linkState("password")}
-                />
-            </label>
-          </div>
-
-
-          <br></br>
-
-          <button className="login-button">Log In</button>
-
-        </form>
+      <div onClick={this.props.toggleLogin}>
+        Log In
       </div>
+
+      <div>
+        <div className={this.props.disp}>
+          <form className="login-user" onSubmit={this.logInUser}>
+            <div>
+              <label>
+                Username
+                <input
+                  type="text"
+                  valueLink={this.linkState("username")}
+                  />
+              </label>
+            </div>
+
+            <br />
+
+            <div>
+              <label>
+                Password
+                <input
+                  type="password"
+                  valueLink={this.linkState("password")}
+                  />
+              </label>
+            </div>
+
+
+            <br></br>
+
+            <button className="login-button">Log In</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
 
     );
   }

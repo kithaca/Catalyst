@@ -57,3 +57,17 @@ body {
 .hidden {
   display: none;
 }
+
+/*.nav {
+  display: inline;
+  padding: 10px 20px;
+  width: 100%;
+
+}
+
+.nav-item {
+  display: block;
+  float: left;
+  background: teal;
+  padding: 10px;
+}*/
