@@ -10,7 +10,7 @@ var App = React.createClass({
   mixins: [History],
 
   getInitialState: function () {
-    return { currentUser: SessionStore.currentUser() };
+    return { currentUser: SessionStore.currentUser(), loggedIn: false };
   },
 
   componentDidMount: function () {
@@ -18,8 +18,17 @@ var App = React.createClass({
     ApiUtil.fetchCurrentUser();
   },
 
+  // loggedIn: function () {
+  //
+  // },
+
   _userChange: function () {
     this.setState({ currentUser: SessionStore.currentUser() });
+    if (Object.keys(SessionStore.currentUser()).length > 0) {
+      this.setState({ loggedIn: true });
+    } else {
+      this.setState({ loggedIn: false });
+    }
     // this.history.push("/");
   },
 
@@ -29,19 +38,22 @@ var App = React.createClass({
 
   logUserOut: function () {
     var that = this;
+    debugger;
     ApiUtil.logout(function () {
+      debugger;
       console.log("logging out");
-      // that.history.pushState(null, "/", {});
+      that.history.pushState(null, "/", {});
     });
   },
 
   render: function () {
     var loginOrOut;
     var signUp;
-    if (this.state.currentUser) {
+    if (this.state.loggedIn) {
+      debugger;
       loginOrOut = <div onClick={this.logUserOut}><Link to="logout">Log Out</Link></div>;
     } else {
-      loginOrOut = <Link to="login">Log In</Link>;
+      loginOrOut = <div><Link to="login">Log In</Link></div>;
       signUp = <Link to="signup">Create Account</Link>;
     }
 
