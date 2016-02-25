@@ -9,7 +9,6 @@ var Login = React.createClass({
 
   blankForm: {
     username: "",
-    email: "",
     password: "",
   },
 
@@ -17,14 +16,14 @@ var Login = React.createClass({
     return (this.blankForm);
   },
 
-  createUser: function functionName(event) {
+  logInUser: function functionName(event) {
     event.preventDefault();
     var user = {};
     var that = this;
     Object.keys(that.state).forEach(function (key) {
       user[key] = that.state[key];
     });
-    ApiUtil.login(user, function () {
+    ApiUtil.login({user: user}, function () {
       that.history.pushState(null, "/", {});
     });
     that.setState(that.blankForm);
@@ -45,7 +44,7 @@ var Login = React.createClass({
 
   render: function () {
     return(
-      <form className="new-user" onSubmit={this.createUser}>
+      <form className="login-user" onSubmit={this.logInUser}>
         <div>
           <label>
             Username
@@ -71,7 +70,7 @@ var Login = React.createClass({
 
         <br></br>
 
-        <button className="login-button">Create Account</button>
+        <button className="login-button">Log In</button>
 
       </form>
 

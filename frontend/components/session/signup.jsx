@@ -17,14 +17,15 @@ var Signup = React.createClass({
     return (this.blankForm);
   },
 
-  createUser: function functionName(event) {
+  createUser: function (event) {
+    debugger;
     event.preventDefault();
     var user = {};
     var that = this;
     Object.keys(that.state).forEach(function (key) {
       user[key] = that.state[key];
     });
-    ApiUtil.createUser(user, function () {
+    ApiUtil.createUser({user: user}, function () {
       that.history.pushState(null, "/", {});
     });
     that.setState(that.blankForm);

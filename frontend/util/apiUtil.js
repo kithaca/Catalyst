@@ -21,7 +21,17 @@ var ApiUtil = {
   },
 
   createUser: function (user, callback) {
+    $.ajax({
+      url: 'api/users',
+      method: 'POST',
+      data: user,
+      success: function (user) {
+        ApiActions.receiveCurrentUser(user);
 
+        callback();
+        console.log("New user created. Login successful");
+      }
+    });
   },
 
   login: function (user, callback) {
@@ -39,10 +49,15 @@ var ApiUtil = {
   },
 
   logout: function () {
+    debugger;
     $.ajax({
       url: 'api/session',
       method: 'DELETE',
+      error: function () {
+        console.log("ajax logout not successful");
+      },
       success: function () {
+        ApiActions.clearSession();
         console.log("logout successful");
       }
     });

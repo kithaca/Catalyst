@@ -4,13 +4,16 @@ var UserStore = new Store(AppDispatcher);
 var UserConstants = require('../constants/userConstants');
 
 var _users = {};
-var _currentUser;
 
 var resetUsers = function (users) {
   _users = {};
   for (var i = 0; i < users.length; i++) {
     _users[users[i].id] = users[i];
   }
+};
+
+var addNewUser = function (user) {
+  _users[user.id] = user;
 };
 
 UserStore.all = function () {
@@ -22,16 +25,18 @@ UserStore.all = function () {
   return usersArr;
 };
 
-UserStore.currentUser = function () {
-  return _currentUser;
-};
-
 UserStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case UserConstants.ALL_USERS_RECEIVED:
       resetUsers(payload.users);
       UserStore.__emitChange();
       break;
+
+    case UserConstants.ADD_NEW_USER:
+      addNewUser(payload.user);
+      UserStore.__emitChange();
+      break;
+
     }
 };
 

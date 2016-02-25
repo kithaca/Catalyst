@@ -10,12 +10,8 @@ var updateCurrentUser = function (currentUser) {
 };
 
 var clearSession = function functionName() {
-  _currentUser = undefined;
+  _currentUser = {};
 };
-
-SessionStore.canLogIn = function () {
-  return _currentUser ? true : false;
-},
 
 SessionStore.currentUser = function () {
   return _currentUser;
@@ -32,6 +28,7 @@ SessionStore.__onDispatch = function (payload) {
 
 
     case UserConstants.CLEAR_SESSION:
+      debugger;
       clearSession();
       SessionStore.__emitChange();
       break;

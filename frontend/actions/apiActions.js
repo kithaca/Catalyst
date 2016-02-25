@@ -17,6 +17,13 @@ var ApiActions = {
     });
   },
 
+  addNewUser: function (user) {
+    Dispatcher.dispatch({
+      actionType: UserConstants.ADD_NEW_USER,
+      user: user
+    });
+  },
+
   clearSession: function () {
     Dispatcher.dispatch({
       actionType: UserConstants.CLEAR_SESSION,

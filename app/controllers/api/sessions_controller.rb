@@ -5,8 +5,8 @@ class Api::SessionsController < ApplicationController
   def create
     # debugger
     user = User.find_by_credentials(
-      params[:username],
-      params[:password]
+      params[:user][:username],
+      params[:user][:password]
     )
 
     if user
@@ -29,6 +29,7 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     log_out!
+    render json: "Logged out."
   end
 
 end

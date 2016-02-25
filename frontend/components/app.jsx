@@ -20,7 +20,7 @@ var App = React.createClass({
 
   _userChange: function () {
     this.setState({ currentUser: SessionStore.currentUser() });
-    this.history.push("/");
+    // this.history.push("/");
   },
 
   componentWillUnmount: function () {
@@ -30,7 +30,8 @@ var App = React.createClass({
   logUserOut: function () {
     var that = this;
     ApiUtil.logout(function () {
-      that.history.pushState(null, "/", {});
+      console.log("logging out");
+      // that.history.pushState(null, "/", {});
     });
   },
 
@@ -38,9 +39,9 @@ var App = React.createClass({
     var loginOrOut;
     var signUp;
     if (this.state.currentUser) {
-      loginOrOut = <div onClick={this.logUserOut}><Link to="logout">Logout</Link></div>;
+      loginOrOut = <div onClick={this.logUserOut}><Link to="logout">Log Out</Link></div>;
     } else {
-      loginOrOut = <Link to="login">Login</Link>;
+      loginOrOut = <Link to="login">Log In</Link>;
       signUp = <Link to="signup">Create Account</Link>;
     }
 
