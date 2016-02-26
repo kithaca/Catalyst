@@ -8,29 +8,37 @@ var Navbar = React.createClass({
   mixins: [History],
 
   render: function () {
-    var show = "hidden";
+    var showLogin = "hidden";
     if (this.props.showLogin()) {
-      show = "session-form";
+      showLogin = "session-form";
     }
 
     var logInOrOut;
     var signUp;
+    var loggedIn = false;
+    var profile;
     if (this.props.loggedIn()) {
       logInOrOut = <div onClick={this.props.logOut}>Log Out</div>;
+      loggedIn = true;
+      profile = <Link to="profile">Profile</Link>;
     } else {
-      logInOrOut = <Login disp={show}
+      logInOrOut = <Login disp={showLogin}
                    toggleLogin={this.props.toggleLogin}/>;
       signUp = <Link to="signup">Create Account</Link>;
-
     }
 
+    var displayProfile = loggedIn ? true : false;
+    var displaySignUp = loggedIn ? false : true;
     return(
       <div className="header">
         <ul className="nav group">
-          <li className="nav-item"><Link to="/">Catalyst</Link></li>
-          <li className="nav-item"><Link to="current">Your Userpage</Link></li>
-          <li className="nav-item">{logInOrOut}</li>
-          <li className="nav-item">{signUp}</li>
+          <Link to="/" className="nav-item" id="logo">
+            Catalyst
+          </Link>
+          {displaySignUp ? <li className="nav-item auth">{signUp}</li> : <p></p>}
+          {displayProfile ? <li className="nav-item auth" id="profile">{profile}</li> : <p></p>}
+
+          <li className="nav-item auth">{logInOrOut}</li>
         </ul>
       </div>
     );

@@ -6,8 +6,8 @@
   position: relative;
   width: 100%;
   display: block;
-  margin: 0 auto;
-  width: auto;
+  margin: auto;
+  padding: 20px;
 }
 
 .group:after {
@@ -20,7 +20,7 @@
   float: left;
   display: inline-block;
   position: relative;
-  width: 22%;
+  width: 21%;
   height: 600px;
   border: 1px solid gainsboro;
   margin: 20px;
@@ -89,4 +89,9 @@
   margin: 0 auto;
   width: 100%;
   padding: 0;
+}
+
+.background-image {
+  margin: 0 auto;
+  height: 30%;
 }
