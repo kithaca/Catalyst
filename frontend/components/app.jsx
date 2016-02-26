@@ -5,6 +5,7 @@ var SessionStore = require('../stores/sessionStore');
 var ApiUtil = require('../util/apiUtil');
 var Login = require('./session/login');
 var Navbar = require('./nav/navbar');
+var ProjectIndex = require('./projects/projectIndex');
 
 
 var App = React.createClass({
@@ -59,14 +60,12 @@ var App = React.createClass({
 
     return(
       <div className="app">
-        <Navbar className="nav"
-                showLogin={this.showLogin}
+        <Navbar showLogin={this.showLogin}
               toggleLogin={this.toggleLogin}
                  loggedIn={this.loggedIn}
-              ensureLogin={this._userChange}
-                   logOut={this.logUserOut}/>
-
-        {this.props.children}
+                   logOut={this.logUserOut}
+                   />
+      {this.props.children}
       </div>
     );
   }

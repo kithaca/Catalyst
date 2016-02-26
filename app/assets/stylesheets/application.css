@@ -31,7 +31,7 @@ body {
   position: relative;
 }
 
-.login-screen {
+/*.login-screen {
   display: block;
   text-align: center;
   position: relative;
@@ -39,9 +39,9 @@ body {
   background: gray;
   opacity: 50%;
   width: 100%;
-}
+}*/
 
-.auth {
+/*.auth {
   display: inline-block;
   text-align: center;
   background: white;
@@ -52,22 +52,36 @@ body {
   z-index: 100;
   width: 400px;
   height: 380px;
-}
+}*/
 
 .hidden {
   display: none;
 }
 
-/*.nav {
+.header {
+  background: teal;
+}
+
+.nav {
+  /*float: left;*/
+  text-align: center;
+  line-height: 40px;
   display: inline;
-  padding: 10px 20px;
-  width: 100%;
+  width: 900px;
+  margin: 0 auto;
 
 }
 
 .nav-item {
+  color: white;
   display: block;
   float: left;
   background: teal;
   padding: 10px;
-}*/
+  width: 50px%;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+}

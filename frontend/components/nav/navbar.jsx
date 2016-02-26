@@ -19,23 +19,19 @@ var Navbar = React.createClass({
       logInOrOut = <div onClick={this.props.logOut}>Log Out</div>;
     } else {
       logInOrOut = <Login disp={show}
-                   toggleLogin={this.props.toggleLogin}
-                   ensureLogin={this.props.ensureLogin}/>;
+                   toggleLogin={this.props.toggleLogin}/>;
       signUp = <Link to="signup">Create Account</Link>;
 
     }
 
     return(
-      <div>
-
-        <ul>
+      <div className="header">
+        <ul className="nav group">
           <li className="nav-item"><Link to="/">Catalyst</Link></li>
           <li className="nav-item"><Link to="current">Your Userpage</Link></li>
           <li className="nav-item">{logInOrOut}</li>
           <li className="nav-item">{signUp}</li>
-
-
-       </ul>
+        </ul>
       </div>
     );
   }
