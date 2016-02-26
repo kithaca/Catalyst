@@ -2,6 +2,7 @@ var React = require('react');
 var History = require('react-router').History;
 var Link = require('react-router').Link;
 var Login = require('../session/login');
+var LoginModal = require('../session/loginModal');
 
 var Navbar = React.createClass({
 
@@ -20,9 +21,9 @@ var Navbar = React.createClass({
     if (this.props.loggedIn()) {
       logInOrOut = <div onClick={this.props.logOut}>Log Out</div>;
       loggedIn = true;
-      profile = <Link to="profile">Profile</Link>;
+      profile = <Link to="current">Profile</Link>;
     } else {
-      logInOrOut = <Login disp={showLogin}
+      logInOrOut = <LoginModal
                    toggleLogin={this.props.toggleLogin}/>;
       signUp = <Link to="signup">Create Account</Link>;
     }
@@ -30,8 +31,8 @@ var Navbar = React.createClass({
     var displayProfile = loggedIn ? true : false;
     var displaySignUp = loggedIn ? false : true;
     return(
-      <div className="header">
-        <ul className="nav group">
+      <div className="header group">
+        <ul className="nav">
           <Link to="/" className="nav-item" id="logo">
             Catalyst
           </Link>

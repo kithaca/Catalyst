@@ -8,6 +8,10 @@
   display: block;
   margin: auto;
   padding: 20px;
+  max-width: 1200px;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
 }
 
 .group:after {
@@ -20,19 +24,22 @@
   float: left;
   display: inline-block;
   position: relative;
-  width: 21%;
-  height: 600px;
+  height: 500px;
   border: 1px solid gainsboro;
-  margin: 20px;
+  margin: 70px 20px;
   overflow: hidden;
   border-radius: 10px;
-
+  width: 29%;
+  flex-basis: 200px;
+  min-width: 100px;
+  min-height: 600px;
+  flex: none;
 }
 
 .proj_title {
   font-size: 16px;
   font-weight: bold;
-  padding: 10px;
+  padding: 5px 10px;
   display: block;
   color: blue;
 
@@ -48,10 +55,12 @@
   background-color: mediumaquamarine;
   text-align: center;
   border-radius: 25px;
+  min-width: 50px;
+  flex: none;
 }
 
 .proj_tagline {
-  padding: 0px 10px;
+  margin: 0px 10px;
   font-size: 14px;
   font-weight: normal;
   color: blue;
@@ -92,6 +101,13 @@
 }
 
 .background-image {
-  margin: 0 auto;
+  display: flex;
   height: 30%;
+}
+
+.background-image * {
+  margin: 0 auto;
+  // height: 30%;
+  // width: 50%;
+
 }

@@ -31,49 +31,28 @@ body {
   position: relative;
 }
 
-/*.login-screen {
-  display: block;
-  text-align: center;
-  position: relative;
-  z-index: 100;
-  background: gray;
-  opacity: 50%;
-  width: 100%;
-}*/
-
-/*.auth {
-  display: inline-block;
-  text-align: center;
-  background: white;
-  color: blue;
-  padding: 5px;
-  margin: 20px;
-  position: relative;
-  z-index: 100;
-  width: 400px;
-  height: 380px;
-}*/
-
 .hidden {
   display: none;
 }
 
 .header {
   background: teal;
+  margin: 0;
+  /*padding: inherit;*/
+  /*margin: inherit;*/
 }
 
 .nav {
-  /*float: left;*/
   text-align: center;
   line-height: 40px;
   display: inline;
-  width: 900px;
-  margin: 0 auto;
+  padding: 0;
+  margin: 0;
 
 }
 
 .nav-item {
-  font-size: 20;
+  font-size: 20px;
   color: white;
   text-decoration: none;
   display: block;
@@ -87,10 +66,38 @@ body {
 .nav-item a {
   color: white;
   text-decoration: none;
+  font-weight: 400;
 }
 
 .auth {
   float: right;
   margin-right: 20px;
   cursor: pointer;
+  font-weight: 400;
+}
+
+#btn {
+  margin: 0 auto;
+  padding: 5px 30px;
+  outline: none;
+  font-size: inherit;
+  background: teal;
+  line-height: 40px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+
+
+.container {
+  /*padding: 20px;*/
+  text-align: center;
+  color: red;
+},
+
+.title {
+  margin: 0;
+  /*color: black;*/
+  font-weight: 400;
 }

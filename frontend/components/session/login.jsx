@@ -3,6 +3,7 @@ var SessionStore = require('../../stores/sessionStore');
 var ApiUtil = require('../../util/apiUtil');
 var History = require('react-router').History;
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+// var LoginModal = require('./loginModal');
 
 var Login = React.createClass({
   mixins: [History, LinkedStateMixin],
@@ -31,46 +32,39 @@ var Login = React.createClass({
 
   render: function () {
     return(
-      <div>
+        <div onClick={this.props.toggleLogin}>
+          Log In
 
-      <div onClick={this.props.toggleLogin}>
-        Log In
+          <div>
+            <form className="login-user" onSubmit={this.logInUser}>
+              <div>
+                <label>
+                  Username
+                  <input
+                    type="text"
+                    valueLink={this.linkState("username")}
+                    />
+                </label>
+              </div>
+
+              <div>
+                <label>
+                  Password
+                  <input
+                    type="password"
+                    valueLink={this.linkState("password")}
+                    />
+                </label>
+              </div>
+
+
+              <br></br>
+
+              <button className="login-button">Log In</button>
+
+            </form>
+          </div>
       </div>
-
-      <div>
-        <div className={this.props.disp}>
-          <form className="login-user" onSubmit={this.logInUser}>
-            <div>
-              <label>
-                Username
-                <input
-                  type="text"
-                  valueLink={this.linkState("username")}
-                  />
-              </label>
-            </div>
-
-            <br />
-
-            <div>
-              <label>
-                Password
-                <input
-                  type="password"
-                  valueLink={this.linkState("password")}
-                  />
-              </label>
-            </div>
-
-
-            <br></br>
-
-            <button className="login-button">Log In</button>
-
-          </form>
-        </div>
-      </div>
-    </div>
 
     );
   }

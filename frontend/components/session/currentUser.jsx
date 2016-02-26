@@ -24,6 +24,7 @@ var CurrentUser = React.createClass({
   },
 
   render: function () {
+    debugger;
     if (Object.keys(this.state.currentUser).length > 0) {
       return (
         <div>

@@ -13,7 +13,7 @@ var ProjectIndexItem = React.createClass({
     return(
       <li className="project_index_item">
         <img className="thumbnail"
-                   src="http://sfgov.org/acc/ftp/uploadedimages/acc/Adoption_Center/fostercare/Blue%2063008(1).jpg"
+                   src="http://purrfectcatbreeds.com/wp-content/uploads/2014/06/abyssinian2.jpg"
                    alt="kitten" />
         <h4 className="proj_category">{this.props.project.category}</h4>
         <h5 className="proj_title">{this.props.project.title}</h5>
