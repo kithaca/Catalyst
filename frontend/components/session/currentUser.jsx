@@ -1,10 +1,8 @@
 var React = require('react');
 var SessionStore = require('../../stores/sessionStore');
 var ApiUtil = require('../../util/apiUtil');
-var History = require('react-router').History;
 
 var CurrentUser = React.createClass({
-  mixins: [History],
 
   getInitialState: function () {
     return { currentUser: SessionStore.currentUser() };
@@ -24,7 +22,6 @@ var CurrentUser = React.createClass({
   },
 
   render: function () {
-    debugger;
     if (Object.keys(this.state.currentUser).length > 0) {
       return (
         <div>

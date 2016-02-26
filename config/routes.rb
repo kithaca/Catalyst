@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
 
     get "session/current", to: "sessions#current"
+    # get "projects/:id", to: "projects#show"
 
     resource :session, only: [:new, :create, :destroy]
     resources :projects, only: [:create, :destroy, :index, :show, :update]

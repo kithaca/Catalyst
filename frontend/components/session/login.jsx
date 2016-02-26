@@ -1,12 +1,10 @@
 var React = require('react');
 var SessionStore = require('../../stores/sessionStore');
 var ApiUtil = require('../../util/apiUtil');
-var History = require('react-router').History;
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-// var LoginModal = require('./loginModal');
 
 var Login = React.createClass({
-  mixins: [History, LinkedStateMixin],
+  mixins: [LinkedStateMixin],
 
   blankForm: {
     username: "",
@@ -25,7 +23,6 @@ var Login = React.createClass({
       user[key] = that.state[key];
     });
     ApiUtil.login({user: user}, function () {
-      // that.history.pushState(null, "/", {});
       that.props.toggleLogin();
     });
   },

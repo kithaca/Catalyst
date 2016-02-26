@@ -14,19 +14,19 @@ goal_amts = []
 start_dates = []
 deadlines = []
 
-10.times { titles << Faker::App.name }
-10.times { taglines << Faker::Company.catch_phrase }
-10.times { descriptions << Faker::Hipster.paragraph(4)}
-10.times { goal_amts << rand(50..5000) }
-10.times { start_dates << Faker::Date.between(Date.today, Faker::Date.forward(7)) }
-10.times { deadlines << Faker::Date.between(Faker::Date.forward(8), 1.year.from_now) }
+1.upto(20) { titles << Faker::App.name }
+1.upto(20) { taglines << Faker::Company.catch_phrase }
+1.upto(20) { descriptions << Faker::Hipster.paragraph(4)}
+1.upto(20) { goal_amts << rand(50..5000) }
+1.upto(20) { start_dates << Faker::Date.between(Date.today, Faker::Date.forward(7)) }
+1.upto(20) { deadlines << Faker::Date.between(Faker::Date.forward(8), 1.year.from_now) }
 
 categories.each do |category|
   new_cat = Category.create(name: category)
   new_cat.save!
 end
 
-10.times do |i|
+1.upto(20) do |i|
   new_project =
     Project.create(
           title: titles[i], creator_id: i, category: categories.sample,

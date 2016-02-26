@@ -13,11 +13,11 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all.includes(:backers)
+    @projects = Project.includes(:backers).all
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = Project.includes(:backers, :backings).find(params[:id])
   end
 
   def update

@@ -1,6 +1,5 @@
 var React = require('react');
 var History = require('react-router').History;
-var Link = require('react-router').Link;
 var SessionStore = require('../stores/sessionStore');
 var ApiUtil = require('../util/apiUtil');
 var Login = require('./session/login');
@@ -29,7 +28,6 @@ var App = React.createClass({
     } else {
       this.setState({ loggedIn: false });
     }
-    // this.history.push("/");
   },
 
   componentWillUnmount: function () {

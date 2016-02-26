@@ -11,6 +11,18 @@ var ApiUtil = {
     });
   },
 
+  fetchOneProject: function (id) {
+    $.ajax({
+      url: 'api/projects/' + id,
+      error: function () {
+        console.log('Project does not exist.');
+      },
+      success: function (project) {
+        ApiActions.receiveOneProject(project);
+      }
+    });
+  },
+
   fetchCurrentUser: function () {
     $.ajax({
       url: '/api/session/current',

@@ -21,7 +21,7 @@ var Navbar = React.createClass({
     if (this.props.loggedIn()) {
       logInOrOut = <div onClick={this.props.logOut}>Log Out</div>;
       loggedIn = true;
-      profile = <Link to="current">Profile</Link>;
+      profile = <Link to="profile">Profile</Link>;
     } else {
       logInOrOut = <LoginModal
                    toggleLogin={this.props.toggleLogin}/>;

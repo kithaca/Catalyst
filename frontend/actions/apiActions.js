@@ -10,6 +10,13 @@ var ApiActions = {
     });
   },
 
+  receiveOneProject: function (project) {
+    Dispatcher.dispatch({
+      actionType: ProjectConstants.ONE_PROJECT_RECEIVED,
+      project: project
+    });
+  },
+
   receiveCurrentUser: function (currentUser) {
     Dispatcher.dispatch({
       actionType: UserConstants.CURRENT_USER,

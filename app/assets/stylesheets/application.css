@@ -19,15 +19,16 @@ html, body, header, ul, li {
   padding: 0;
   border: 0;
   font: inherit;
-  color: black;
+  color: white;
+  background: black;
   vertical-align: baseline;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-  background: white;
-  color: black;
+  background: black;
+  color: white;
   position: relative;
 }
 
@@ -53,6 +54,7 @@ body {
 
 .nav-item {
   font-size: 20px;
+  /*font-variant: small-caps;*/
   color: white;
   text-decoration: none;
   display: block;
@@ -66,20 +68,22 @@ body {
 .nav-item a {
   color: white;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .auth {
   float: right;
   margin-right: 20px;
   cursor: pointer;
-  font-weight: 400;
 }
 
 #btn {
   outline: none !important;
   font-size: 17px !important;
-  font-weight: normal;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 0px;
+  /*font-variant: small-caps;*/
   background: teal !important;
   color: white !important;
   border: none !important;

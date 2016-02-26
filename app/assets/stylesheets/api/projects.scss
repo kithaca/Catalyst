@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.project_index {
+.project-index {
   position: relative;
   width: 100%;
   display: block;
@@ -20,7 +20,7 @@
   clear: both;
 }
 
-.project_index_item {
+.project-index-item {
   float: left;
   display: inline-block;
   position: relative;
@@ -36,7 +36,7 @@
   flex: none;
 }
 
-.proj_title {
+.proj-title {
   font-size: 16px;
   font-weight: bold;
   padding: 5px 10px;
@@ -45,7 +45,7 @@
 
 }
 
-.proj_category {
+.proj-category {
   display: block;
   padding: 10px;
   margin: 10px;
@@ -59,35 +59,42 @@
   flex: none;
 }
 
-.proj_tagline {
+.proj-tagline {
   margin: 0px 10px;
   font-size: 14px;
   font-weight: normal;
   color: blue;
 }
 
-.proj_descr {
+.proj-descr {
   margin: 10px;
   font-size: 14px;
   font-weight: normal;
   color: blue;
 }
 
-.proj_goal {
+.proj-goal {
   margin: 10px;
   font-size: 14px;
   font-weight: normal;
   color: blue;
 }
 
-.proj_start {
+.proj-start {
   margin: 10px;
   font-size: 14px;
   font-weight: normal;
   color: blue;
 }
 
-.proj_deadline {
+.proj-deadline {
+  margin: 10px;
+  font-size: 14px;
+  font-weight: normal;
+  color: blue;
+}
+
+.proj-creator {
   margin: 10px;
   font-size: 14px;
   font-weight: normal;
@@ -98,6 +105,7 @@
   margin: 0 auto;
   width: 100%;
   padding: 0;
+  cursor: pointer;
 }
 
 .background-image {
@@ -109,5 +117,72 @@
   margin: 0 auto;
   // height: 30%;
   // width: 50%;
+}
 
+.project_detail {
+  position: relative;
+  width: 50%;
+  height: auto;
+  display: flex;
+  margin: auto;
+  padding: 20px;
+  max-width: 1200px;
+}
+
+.project_pic {
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+}
+
+.sidebar {
+  float: right;
+  padding-top: 0px;
+  padding-right: 200px;
+  padding-left: 100px;
+  font-size: 30px;
+}
+
+.sidebar > h3 {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.button {
+  position: relative;
+  background-color: crimson;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 3px solid crimson;
+  transition-duration: 0.3s;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: white; /* Green */
+  color: crimson;
+}
+
+.button:after {
+    content: "";
+    background: crimson;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -30px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s;
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
 }

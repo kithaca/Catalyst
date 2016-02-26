@@ -12,10 +12,19 @@ var resetProjects = function (projects) {
   }
 };
 
+var resetProject = function (project) {
+  _projects[project.id] = project;
+};
+
 ProjectStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case ProjectConstants.ALL_PROJECTS_RECEIVED:
       resetProjects(payload.projects);
+      ProjectStore.__emitChange();
+      break;
+
+    case ProjectConstants.ONE_PROJECT_RECEIVED:
+      resetProject(payload.project);
       ProjectStore.__emitChange();
       break;
 
