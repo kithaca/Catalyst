@@ -77,27 +77,22 @@ body {
 }
 
 #btn {
-  margin: 0 auto;
-  padding: 5px 30px;
-  outline: none;
-  font-size: inherit;
-  background: teal;
-  line-height: 40px;
-  color: white;
-  border: none;
-  border-radius: 5px;
+  outline: none !important;
+  font-size: 17px !important;
+  font-weight: normal;
+  background: teal !important;
+  color: white !important;
+  border: none !important;
+  cursor: pointer;
+
 }
 
-
-
 .container {
-  /*padding: 20px;*/
   text-align: center;
   color: red;
-},
+}
 
 .title {
   margin: 0;
-  /*color: black;*/
   font-weight: 400;
 }

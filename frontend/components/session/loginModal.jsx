@@ -1,7 +1,7 @@
 var React = require('react');
 // var Modal = require('react-bootstrap').Modal;
 var Boron = require('boron');
-var Button = require('react-bootstrap').Button;
+// var Button = require('react-bootstrap').Button;
 var Login = require('./login');
 // var Popover = require('react-popover');
 // var Tooltip = require('rc-tooltip');
@@ -27,6 +27,8 @@ var Login = require('./login');
 // };
 
 
+
+
 var LoginModal = React.createClass({
 
     toggleDialog: function (ref) {
@@ -49,11 +51,11 @@ var LoginModal = React.createClass({
 
         return (
           <div>
-          <Button
+          <button
             onClick={this.toggleDialog(modalName)}
                  id="btn">
             <h3>Log In</h3>
-          </Button>
+          </button>
 
           <Modal ref={modalName}>{this.getContent(modalName)}</Modal>
           </div>
