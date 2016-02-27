@@ -24,14 +24,14 @@ var ProjectIndex = React.createClass({
 
   render: function () {
     return(
-      <div>
+      <div className="project-index group">
         <h1 className="index-title">Explore Projects</h1>
         <figure className="background-image">
           <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTBbPt2RA9kHP2Bi54hUR2H8TgR-2cqP8n1Z4LBaA54p0dM0fao"
                alt="background" />
         </figure>
 
-        <ul className="project-index group">
+        <ul>
           {this.state.projects.map(function (project) {
             return (<ProjectIndexItem key={project.id} project={project} />);
           })}

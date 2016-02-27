@@ -28,7 +28,7 @@ var CategoryIndex = React.createClass({
     }
     var that = this;
     return (
-      <div>
+      <div className="category-list">
         {Object.keys(that.state.categories).map(function (category) {
           return (<button to="/" className="category">
           {category}

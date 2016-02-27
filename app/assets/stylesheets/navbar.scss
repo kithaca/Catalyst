@@ -1,6 +1,6 @@
 .header {
   background: teal;
-  margin: 0;
+  margin-top: -16px;
   /*padding: inherit;*/
   /*margin: inherit;*/
 }
@@ -32,20 +32,21 @@
 
 .auth {
   float: right;
-  margin-right: 20px;
+  // margin-right: 20px;
   cursor: pointer;
+
 }
 
 #btn {
-  outline: none !important;
-  font-size: 17px !important;
+  outline: none;
+  font-size: 17px;
   font-weight: 300;
   font-family: 'Open Sans', sans-serif;
   line-height: 0px;
   /*font-variant: small-caps;*/
-  background: teal !important;
-  color: white !important;
-  border: none !important;
+  background: teal;
+  color: white;
+  border: none;
   cursor: pointer;
 }
 
@@ -59,11 +60,23 @@
   font-weight: 400;
 }
 
+
 .nav-item, .auth, .nav-item a {
   transition-duration: 0.3s;
 }
 
-.nav-item:hover, .auth:hover {
+.nav-item:hover {
   background-color: white;
   color: teal;
+}
+
+.nav-item > a:hover {
+  background-color: white;
+  color: teal;
+}
+
+
+.auth:hover {
+  background-color: white;
+  // color: teal !important;
 }
