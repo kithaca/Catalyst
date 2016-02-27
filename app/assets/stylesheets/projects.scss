@@ -9,8 +9,6 @@
   margin: auto;
   padding: 20px;
   max-width: 1200px;
-  // display: flex;
-  // flex-wrap: wrap;
   // justify-content: center;
 }
 
@@ -25,7 +23,7 @@
   display: inline-block;
   position: relative;
   height: 500px;
-  border: 1px solid gainsboro;
+  border: 1px solid midnightblue;
   margin: 70px 20px;
   overflow: hidden;
   border-radius: 10px;
@@ -33,6 +31,7 @@
   flex-basis: 200px;
   min-width: 100px;
   min-height: 600px;
+  color: darkcyan;
   flex: none;
 }
 
@@ -41,8 +40,6 @@
   font-weight: bold;
   padding: 5px 10px;
   display: block;
-  color: blue;
-
 }
 
 .proj-category {
@@ -51,7 +48,7 @@
   margin: 10px;
   font-size: 18px;
   font-weight: normal;
-  color: white;
+  color: black;
   background-color: mediumaquamarine;
   text-align: center;
   border-radius: 25px;
@@ -63,42 +60,36 @@
   margin: 0px 10px;
   font-size: 14px;
   font-weight: normal;
-  color: blue;
 }
 
 .proj-descr {
   margin: 10px;
   font-size: 14px;
   font-weight: normal;
-  color: blue;
 }
 
 .proj-goal {
   margin: 10px;
   font-size: 14px;
   font-weight: normal;
-  color: blue;
 }
 
 .proj-start {
   margin: 10px;
   font-size: 14px;
   font-weight: normal;
-  color: blue;
 }
 
 .proj-deadline {
   margin: 10px;
   font-size: 14px;
   font-weight: normal;
-  color: blue;
 }
 
 .proj-creator {
   margin: 10px;
   font-size: 14px;
   font-weight: normal;
-  color: blue;
 }
 
 .thumbnail {
@@ -117,72 +108,4 @@
   margin: 0 auto;
   // height: 30%;
   // width: 50%;
-}
-
-.project_detail {
-  position: relative;
-  width: 50%;
-  height: auto;
-  display: flex;
-  margin: auto;
-  padding: 20px;
-  max-width: 1200px;
-}
-
-.project_pic {
-  display: flex;
-  margin: 0 auto;
-  position: relative;
-}
-
-.sidebar {
-  float: right;
-  padding-top: 0px;
-  padding-right: 200px;
-  padding-left: 100px;
-  font-size: 30px;
-}
-
-.sidebar > h3 {
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
-
-.button {
-  position: relative;
-  background-color: crimson;
-  color: white;
-  padding: 15px 30px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 3px solid crimson;
-  transition-duration: 0.3s;
-  overflow: hidden;
-}
-
-.button:hover {
-  background-color: white; /* Green */
-  color: crimson;
-}
-
-.button:after {
-    content: "";
-    background: crimson;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -30px !important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s;
-}
-
-.button:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
 }

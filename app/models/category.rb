@@ -13,5 +13,8 @@ class Category < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :project_categories
+  has_many :projects,
+    through: :projects,
+    source: :project
 
 end

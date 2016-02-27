@@ -33,12 +33,24 @@ var ProjectDetail = React.createClass({
     var date = Date.now();
     return(
       <div className="project-detail">
-        <h1>{this.state.project.title}</h1>
-        <h3>Creator: {this.state.project.creator}</h3>
-        <img src="http://www.cutestpaw.com/wp-content/uploads/2012/01/Cuddling-Kittens.jpg"
-           style={{width: '500px', height: 'auto'}}
-             alt="snuggling kittens"
-       className="project-pic" />
+
+        <div className="project-header">
+          <h1>{this.state.project.title}: {this.state.project.tagline}</h1>
+          <h3>Creator: {this.state.project.creator}</h3>
+        </div>
+
+        <div className="project-display">
+          <div className="image-wrapper">
+            <img src="http://www.cutestpaw.com/wp-content/uploads/2012/01/Cuddling-Kittens.jpg"
+                 alt="snuggling kittens"
+            className="project-pic" />
+          </div>
+
+          <div className="details">
+            <h4>{this.state.project.description}</h4>
+          </div>
+        </div>
+
         <div className="sidebar">
           <h3>{this.state.project.total_backers} catalysts</h3>
           <h3>${this.state.project.pledged} pledged</h3>

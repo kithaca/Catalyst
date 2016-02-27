@@ -12,6 +12,7 @@ var App = require('./components/app');
 var Login = require('./components/session/login');
 var Signup = require('./components/session/signup');
 var CatalyzeForm = require('./components/projects/catalyzeForm');
+var CategoryIndex = require('./components/projects/categoryIndex');
 
 
 var routes = (
@@ -22,6 +23,8 @@ var routes = (
     <Route path="projects/:id" component={ProjectDetail}>
       <Route path="catalyze-form" component={CatalyzeForm}></Route>
     </Route>
+    <Route path="categories" component={CategoryIndex}></Route>
+    <Route path="categories/:id"></Route>
   </Route>
 );
 

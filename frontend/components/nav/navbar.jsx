@@ -36,6 +36,11 @@ var Navbar = React.createClass({
           <Link to="/" className="nav-item" id="logo">
             Catalyst
           </Link>
+
+          <Link to="categories" className="nav-item">
+            Categories
+          </Link>
+
           {displaySignUp ? <li className="nav-item auth">{signUp}</li> : <p></p>}
           {displayProfile ? <li className="nav-item auth" id="profile">{profile}</li> : <p></p>}
 

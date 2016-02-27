@@ -31,7 +31,7 @@ var ProjectIndex = React.createClass({
                alt="background" />
         </figure>
 
-        <ul className="project_index group">
+        <ul className="project-index group">
           {this.state.projects.map(function (project) {
             return (<ProjectIndexItem key={project.id} project={project} />);
           })}

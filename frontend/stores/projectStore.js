@@ -40,6 +40,8 @@ ProjectStore.all = function () {
   return projectArr;
 };
 
+// ProjectStore.
+
 ProjectStore.find = function (id) {
   return _projects[id];
 };
