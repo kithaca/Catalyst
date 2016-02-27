@@ -14,32 +14,35 @@ goal_amts = []
 start_dates = []
 deadlines = []
 
-1.upto(20) { titles << Faker::App.name }
-1.upto(20) { taglines << Faker::Company.catch_phrase }
-1.upto(20) { descriptions << Faker::Hipster.paragraph(4)}
-1.upto(20) { goal_amts << rand(50..5000) }
-1.upto(20) { start_dates << Faker::Date.between(Date.today, Faker::Date.forward(7)) }
-1.upto(20) { deadlines << Faker::Date.between(Faker::Date.forward(8), 1.year.from_now) }
+1.upto(10) { titles << Faker::App.name }
+1.upto(10) { taglines << Faker::Company.catch_phrase }
+1.upto(10) { descriptions << Faker::Hipster.paragraph(4)}
+1.upto(10) { goal_amts << rand(50..5000) }
+1.upto(10) { start_dates << Faker::Date.between(Date.today, Faker::Date.forward(7)) }
+1.upto(10) { deadlines << Faker::Date.between(Faker::Date.forward(8), 1.year.from_now) }
 
 categories.each do |category|
   new_cat = Category.create(name: category)
   new_cat.save!
 end
 
-1.upto(20) do |i|
+1.upto(10) do
+  new_user = User.create(
+  username: Faker::Internet.user_name, email: Faker::Internet.free_email,
+  password: Faker::Internet.password)
+
+  new_user.save!
+end
+
+1.upto(10) do
   new_project =
     Project.create(
-          title: titles[i], creator_id: i, category: categories.sample,
-          tagline: taglines[i], description: descriptions[i],
-          goal_amt: goal_amts[i], start_date: start_dates[i],
-          deadline: deadlines[i] )
+          title: titles.sample, creator_id: (User.all).sample.id, category: categories.sample,
+          tagline: taglines.sample, description: descriptions.sample,
+          goal_amt: goal_amts.sample, start_date: start_dates.sample,
+          deadline: deadlines.sample )
 
   new_project.save!
 
-  new_user = User.create(
-        username: Faker::Internet.user_name, email: Faker::Internet.free_email,
-        password: Faker::Internet.password)
-
-  new_user.save!
 
 end
