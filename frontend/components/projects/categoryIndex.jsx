@@ -6,7 +6,7 @@ var History = require('react-router').History;
 var CategoryIndex = React.createClass({
 
   getInitialState: function () {
-    return { projects: ProjectStore.all() };
+    return { categories: ProjectStore.categories() };
   },
 
   componentDidMount: function () {
@@ -15,16 +15,28 @@ var CategoryIndex = React.createClass({
   },
 
   _onChange: function () {
-    this.setState({ projects: ProjectStore.all() });
+    this.setState({ categories: ProjectStore.categories() });
   },
 
   componentWillUnmount: function () {
     this.projectListener.remove();
   },
 
-
   render: function () {
-    return <div></div>;
+    if (Object.keys(this.state.categories).length === 0) {
+      return <div>No cats here :(</div>;
+    }
+    var that = this;
+    return (
+      <div>
+        {Object.keys(that.state.categories).map(function (category) {
+          return (<button to="/" className="category">
+          {category}
+          {that.state.categories[category]}
+        </button>);
+        })}
+      </div>
+    );
   }
 
 });

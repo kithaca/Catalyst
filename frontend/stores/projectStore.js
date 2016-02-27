@@ -40,7 +40,18 @@ ProjectStore.all = function () {
   return projectArr;
 };
 
-// ProjectStore.
+ProjectStore.categories = function () {
+  var categories = {};
+  Object.keys(_projects).forEach(function (projectId) {
+    var proj = _projects[projectId];
+    if (categories[proj.category] === undefined) {
+      categories[proj.category] = 1;
+    } else {
+      categories[proj.category] += 1;
+    }
+  });
+  return categories;
+};
 
 ProjectStore.find = function (id) {
   return _projects[id];
