@@ -44,5 +44,13 @@ end
 
   new_project.save!
 
+end
 
+Project.all.each do |project|
+  backer  = User.all.sample
+  proj_backing = ProjectBacking.create(project_id: project.id, backer_id: backer.id, pledge_amt: rand(1..2000))
+  proj_category = ProjectCategory.create(project_id: project.id, category_id: Category.all.sample.id)
+
+  proj_backing.save!
+  proj_category.save!
 end

@@ -43,7 +43,8 @@ var App = React.createClass({
   },
 
   toggleLogin: function () {
-    this.setState({ showLoginForm: !this.state.showLoginForm });
+    // this.setState({ showLoginForm: !this.state.showLoginForm })
+    ApiUtil.fetchCurrentUser();
   },
 
 

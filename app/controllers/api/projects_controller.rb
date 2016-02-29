@@ -3,6 +3,7 @@ class Api::ProjectsController < ApplicationController
   def new
   end
 
+
   def create
     @project = Project.new(project_params)
     if @project.save
@@ -13,11 +14,11 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.includes(:backers).all
+    @projects = Project.includes(:creator, :backers, :backings)
   end
 
   def show
-    @project = Project.includes(:backers, :backings).find(params[:id])
+    @project = Project.includes(:creator, :backers, :backings).find(params[:id])
   end
 
   def update

@@ -1,32 +1,6 @@
 var React = require('react');
-// var Modal = require('react-bootstrap').Modal;
 var Boron = require('boron');
-// var Button = require('react-bootstrap').Button;
 var Login = require('./login');
-// var Popover = require('react-popover');
-// var Tooltip = require('rc-tooltip');
-
-// var styles = {
-  // btn: {
-  //     margin: '1em auto',
-  //     padding: '1em 2em',
-  //     outline: 'none',
-  //     fontSize: 16,
-  //     fontWeight: '600',
-  //     background: '#C94E50',
-  //     color: '#FFFFFF',
-  //     border: 'noneclassName "container" {
-//       padding: '2em',
-//       textAlign: 'center'
-//   },
-//   title: {
-//     margin: 0,
-//     color: '#C94E50',
-//     fontWeight: 400
-//   }
-// };
-
-
 
 
 var LoginModal = React.createClass({
@@ -41,7 +15,7 @@ var LoginModal = React.createClass({
     getContent: function (modalName) {
       return (
         <div className="container">
-          <Login toggleLogin={this.props.toggleLogin}></Login>
+          <Login toggleLogin={this.props.toggleLogin} closeModal={this.toggleDialog(modalName)}></Login>
           <button className="btn" onClick={this.toggleDialog(modalName)}>Close</button>
       </div>);
     },

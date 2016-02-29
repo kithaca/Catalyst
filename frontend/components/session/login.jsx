@@ -24,6 +24,7 @@ var Login = React.createClass({
     });
     ApiUtil.login({user: user}, function () {
       that.props.toggleLogin();
+      that.props.closeModal();
     });
   },
 
