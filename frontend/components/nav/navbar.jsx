@@ -3,6 +3,7 @@ var History = require('react-router').History;
 var Link = require('react-router').Link;
 var Login = require('../session/login');
 var LoginModal = require('../session/loginModal');
+var SignupModal = require('../session/signupModal');
 
 var Navbar = React.createClass({
 
@@ -25,7 +26,7 @@ var Navbar = React.createClass({
     } else {
       logInOrOut = <LoginModal
                    toggleLogin={this.props.toggleLogin}/>;
-      signUp = <Link to="signup">Create Account</Link>;
+          signUp = <SignupModal />;
     }
 
     var displayProfile = loggedIn ? true : false;
@@ -39,6 +40,10 @@ var Navbar = React.createClass({
 
           <Link to="categories" className="nav-item">
             Categories
+          </Link>
+
+          <Link to="new-project" className="nav-item">
+            New Project
           </Link>
 
           {displaySignUp ? <li className="nav-item auth">{signUp}</li> : <p></p>}
