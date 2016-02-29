@@ -7,9 +7,9 @@ class Api::ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-      render :show
+      render json: {message: "Project created."}
     else
-      render json: @project.errors.full_messages, status: 422
+      # render json: {errors: @project.errors.full_messages}
     end
   end
 
@@ -38,8 +38,8 @@ class Api::ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title, :category, :description,
-      :goal_amt, :start_date, :deadline)
+    params.require(:project).permit(:creator_id, :title, :category, :tagline,
+      :description, :goal_amt, :start_date, :deadline)
   end
 
 end

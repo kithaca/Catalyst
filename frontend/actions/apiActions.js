@@ -42,7 +42,15 @@ var ApiActions = {
       actionType: UserConstants.ALL_USERS_RECEIVED,
       users: users
     });
+  },
+
+  addNewProject: function (project) {
+    Dispatcher.dispatch({
+      actionType: ProjectConstants.ADD_NEW_PROJECT,
+      project: project
+    });
   }
+
 };
 
 module.exports = ApiActions;

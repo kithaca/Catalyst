@@ -16,6 +16,10 @@ var resetProject = function (project) {
   _projects[project.id] = project;
 };
 
+var createProject = function (project) {
+  _projects[project.id] = project;
+};
+
 ProjectStore.__onDispatch = function (payload) {
   switch(payload.actionType) {
     case ProjectConstants.ALL_PROJECTS_RECEIVED:
@@ -28,6 +32,10 @@ ProjectStore.__onDispatch = function (payload) {
       ProjectStore.__emitChange();
       break;
 
+    case ProjectConstants.ADD_NEW_PROJECT:
+      createProject(payload.project);
+      ProjectStore.__emitChange();
+      break;
   }
 };
 

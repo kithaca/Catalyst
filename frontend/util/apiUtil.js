@@ -76,6 +76,22 @@ var ApiUtil = {
         console.log("logout successful");
       }
     });
+  },
+
+  createProject: function (project) {
+    $.ajax({
+      url: 'api/projects',
+      method: 'POST',
+      data: project,
+      error: function (req) {
+        debugger;
+        console.log(req.responseText);
+      },
+      success: function (data) {
+        ApiActions.addNewProject(data);
+        console.log("new project added");
+      }
+    });
   }
 
 };

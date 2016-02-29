@@ -3,7 +3,6 @@ class Api::SessionsController < ApplicationController
   end
 
   def create
-    # debugger
     user = User.find_by_credentials(
       params[:user][:username],
       params[:user][:password]
@@ -11,10 +10,7 @@ class Api::SessionsController < ApplicationController
 
     if user
       log_in!(user)
-      # debugger;
       render json: {}
-    else
-      # render json: {}
     end
   end
 

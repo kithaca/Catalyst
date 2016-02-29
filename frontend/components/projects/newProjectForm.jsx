@@ -8,33 +8,64 @@ var NewProjectForm = React.createClass({
 
   blankForm: {
     title: "",
+    creator_id: SessionStore.currentUser().id,
     category: "",
     tagline: "",
-    goal: "",
-    start: new Date(),
+    goal_amt: "",
+    start_date: new Date(),
     deadline: "",
     description: ""
   },
 
+  errors: [],
+
   getInitialState: function () {
-    return (this.blankForm);
+    return ({project: this.blankForm, errors: this.errors});
+  },
+
+  validateProject: function (project) {
+    this.errors = [];
+    var that = this;
+    Object.keys(project).forEach(function (key) {
+      if (project[key] === "") {
+        that.errors.push("Field " + key + " can't be blank.");
+      }
+    });
+    if (project.deadline < project.start_date) {
+      that.errors.push("Deadline cannot be before start date.");
+    }
+    if (that.errors.length === 0) {
+      return true;
+    } else {
+      that.errors = that.errors.join("\n");
+      that.setState({errors: that.errors});
+      debugger;
+      return false;
+    }
   },
 
   createProject: function () {
     event.preventDefault();
     var project = {};
     var that = this;
-    Object.keys(that.state).forEach(function (key) {
-      project[key] = that.state[key];
+    Object.keys(that.state.project).forEach(function (key) {
+      project[key] = that.state.project[key];
     });
-    ApiUtil.newProject({project: project}, function () {
-    });
+    if (this.validateProject(project)) {
+      ApiUtil.createProject({project: project});
+    }
   },
 
   render: function () {
+    debugger;
     return(
+
           <div>
-            Create New Project
+            <h1>Create New Project</h1>
+
+            <div>
+              {this.state.errors.length > 0 ? <h5>{this.state.errors}</h5> : <p></p> }
+            </div>
 
             <form onSubmit={this.createProject}>
 
@@ -75,7 +106,7 @@ var NewProjectForm = React.createClass({
                   Funding Goal
                   $<input
                     type="text"
-                    valueLink={this.linkState("goal")}
+                    valueLink={this.linkState("goal_amt")}
                     />
                 </label>
               </div>
