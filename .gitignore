@@ -3,3 +3,6 @@ bundle.js
 
 # ignore kitten
 kitten.png
+
+# ignore modules
+node_modules
