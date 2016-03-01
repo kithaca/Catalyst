@@ -1,7 +1,7 @@
 # Catalyst
 
-[Link][link]
-[link]: www.catalyze.tech
+[Link to live website][link]
+[link]: http://www.catalyze.tech
 
 ## Minimum Viable Product
 
