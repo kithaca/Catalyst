@@ -73,7 +73,6 @@ var NewProjectForm = React.createClass({
     if (that.validateProject(project)) {
       project["creator_name"] = SessionStore.currentUser().username;
       ApiUtil.createProject({project: project}, function (id) {
-        that.setState(that.blankForm());
         that.props.history.pushState(null, "projects/" + id, {});
       });
     }
