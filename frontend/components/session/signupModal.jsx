@@ -1,12 +1,16 @@
 var React = require('react');
 var Boron = require('boron');
 var Signup = require('./signup');
-
+var EventEmitter = require('./eventEmitter');
 
 var SignupModal = React.createClass({
 
-    toggleDialog: function (ref) {
+    componentDidMount: function () {
+      EventEmitter.subscribe("TOGGLE_SIGNUP", this.toggleDialog('OutlineModal'));
+      // EventEmitter.subscribe("SHOW_LOGIN", this.toggleDialog('OutlineModal'));
+    },
 
+    toggleDialog: function (ref) {
         return (function () {
           this.refs[ref].toggle();
         }.bind(this));

@@ -2,6 +2,7 @@ var React = require('react');
 var SessionStore = require('../../stores/sessionStore');
 var ApiUtil = require('../../util/apiUtil');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var EventEmitter = require('./eventEmitter');
 
 var Login = React.createClass({
   mixins: [LinkedStateMixin],
@@ -13,6 +14,11 @@ var Login = React.createClass({
 
   getInitialState: function () {
     return (this.blankForm);
+  },
+
+  renderSignup: function () {
+    EventEmitter.dispatch("TOGGLE_LOGIN")
+    EventEmitter.dispatch("TOGGLE_SIGNUP");
   },
 
   logInUser: function functionName(event) {
@@ -57,7 +63,8 @@ var Login = React.createClass({
               <div className="option-container">
                 <div className="lazy-options">
                   <h5>Don't have an account?</h5>
-                  <button className="lazy-login-btn">>>Sign Up</button>
+                  <button onClick={this.renderSignup}
+                        className="lazy-login-btn">>>Sign Up</button>
                 </div>
                 <br/>
                 <div className="lazy-options">

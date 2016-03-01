@@ -6,7 +6,7 @@ var EventEmitter = require('./eventEmitter');
 var LoginModal = React.createClass({
 
   componentDidMount: function () {
-    EventEmitter.subscribe("SHOW_LOGIN", this.toggleDialog('OutlineModal'));
+    EventEmitter.subscribe("TOGGLE_LOGIN", this.toggleDialog('OutlineModal'));
   },
 
   toggleDialog: function (ref) {
