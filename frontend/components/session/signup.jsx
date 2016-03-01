@@ -19,6 +19,7 @@ var Signup = React.createClass({
   },
 
   renderLogin: function () {
+    // debugger;
     EventEmitter.dispatch("TOGGLE_SIGNUP")
     EventEmitter.dispatch("TOGGLE_LOGIN");
   },
@@ -63,6 +64,7 @@ var Signup = React.createClass({
     if (this.errors === undefined) {
       this.errors = {};
     }
+    // debugger;
 
     return(
       <div>

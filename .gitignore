@@ -1,8 +1,12 @@
 # ignore bundle.js
 bundle.js
+bundle.js.map
 
 # ignore kitten
 kitten.png
 
 # ignore modules
 node_modules
+
+# ignore tmp
+tmp
