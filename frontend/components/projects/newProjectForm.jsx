@@ -25,20 +25,22 @@ var currentDate = function () {
 var NewProjectForm = React.createClass({
   mixins: [LinkedStateMixin],
 
-  blankForm: {
-    title: "",
-    category: "",
-    tagline: "",
-    goal_amt: "",
-    start_date: new Date(),
-    deadline: currentDate(),
-    description: ""
+  blankForm: function () {
+    return {
+      title: "",
+      category: "",
+      tagline: "",
+      goal_amt: "",
+      start_date: new Date(),
+      deadline: currentDate(),
+      description: ""
+    };
   },
 
   errors: {},
 
   getInitialState: function () {
-    return(this.blankForm);
+    return(this.blankForm());
   },
 
   validateProject: function (project) {
@@ -62,15 +64,16 @@ var NewProjectForm = React.createClass({
 
   createProject: function () {
     event.preventDefault();
-    var project = this.blankForm;
+    var project = this.blankForm();
     var that = this;
     Object.keys(that.state).forEach(function (key) {
       project[key] = that.state[key];
     });
 
-    if (this.validateProject(project)) {
+    if (that.validateProject(project)) {
       project["creator_name"] = SessionStore.currentUser().username;
       ApiUtil.createProject({project: project}, function (id) {
+        that.setState(that.blankForm());
         that.props.history.pushState(null, "projects/" + id, {});
       });
     }
