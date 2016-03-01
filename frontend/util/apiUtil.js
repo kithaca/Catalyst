@@ -79,15 +79,16 @@ var ApiUtil = {
   },
 
   createProject: function (project) {
+    debugger;
     $.ajax({
       url: 'api/projects',
       method: 'POST',
       data: project,
       error: function (req) {
-        debugger;
-        console.log(req.responseText);
+        console.log("new project not added");
       },
       success: function (data) {
+        debugger;
         ApiActions.addNewProject(data);
         console.log("new project added");
       }

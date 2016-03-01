@@ -6,6 +6,10 @@ class Api::ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    username = params[:project][:creator_name]
+    user = User.find_by_username(username)
+    debugger
+    @project["creator_id"] = user.id;
     if @project.save
       render json: {message: "Project created."}
     else
@@ -38,7 +42,7 @@ class Api::ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:creator_id, :title, :category, :tagline,
+    params.require(:project).permit(:title, :category, :tagline,
       :description, :goal_amt, :start_date, :deadline)
   end
 

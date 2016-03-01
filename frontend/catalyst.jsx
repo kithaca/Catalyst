@@ -24,7 +24,6 @@ var routes = (
       <Route path="catalyze-form" component={CatalyzeForm}></Route>
     </Route>
     <Route path="categories" component={CategoryIndex}></Route>
-    <Route path="categories/:id"></Route>
     <Route path="new-project" component={NewProjectForm}></Route>
   </Route>
 );

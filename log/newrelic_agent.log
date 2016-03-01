@@ -468,3 +468,93 @@
 [2016-02-29 11:47:42 -0800 AAStudent dp 1 (#11) (3266)] INFO : Doing deferred dependency-detection before Rack startup
 [2016-02-29 11:47:44 -0800 AAStudent dp 1 (#11) (3266)] ERROR : Invalid license key, please contact support@newrelic.com
 [2016-02-29 11:47:44 -0800 AAStudent dp 1 (#11) (3266)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-02-29 15:33:19 -0800 AAStudent dp 1 (#11) (3266)] INFO : Starting Agent shutdown
+[2016-02-29 15:36:43 -0800 AAStudent dp 1 (#11) (575)] INFO : Starting the New Relic agent in "development" environment.
+[2016-02-29 15:36:43 -0800 AAStudent dp 1 (#11) (575)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-02-29 15:36:43 -0800 AAStudent dp 1 (#11) (575)] WARN : No configuration file found. Working directory = /Users/appacademy/Desktop/catalyst/catalyst
+[2016-02-29 15:36:43 -0800 AAStudent dp 1 (#11) (575)] WARN : Looked in these locations (based on defaults): /Users/appacademy/Desktop/catalyst/catalyst/config/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/config/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/newrelic.yml, /Users/appacademy/.newrelic/newrelic.yml, /Users/appacademy/newrelic.yml
+[2016-02-29 15:36:43 -0800 AAStudent dp 1 (#11) (575)] INFO : Environment: development
+[2016-02-29 15:36:43 -0800 AAStudent dp 1 (#11) (575)] INFO : Dispatcher: webrick
+[2016-02-29 15:36:43 -0800 AAStudent dp 1 (#11) (575)] INFO : Application: development
+[2016-02-29 15:36:43 -0800 AAStudent dp 1 (#11) (575)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-02-29 15:36:43 -0800 AAStudent dp 1 (#11) (575)] INFO : Installing ActiveJob instrumentation
+[2016-02-29 15:36:43 -0800 AAStudent dp 1 (#11) (575)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-02-29 15:36:44 -0800 AAStudent dp 1 (#11) (575)] INFO : Installing Net instrumentation
+[2016-02-29 15:36:44 -0800 AAStudent dp 1 (#11) (575)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-02-29 15:36:44 -0800 AAStudent dp 1 (#11) (575)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-02-29 15:36:44 -0800 AAStudent dp 1 (#11) (575)] INFO : Installing Rails 3+ middleware instrumentation
+[2016-02-29 15:36:44 -0800 AAStudent dp 1 (#11) (575)] INFO : Installing Rails 4 Controller instrumentation
+[2016-02-29 15:36:44 -0800 AAStudent dp 1 (#11) (575)] INFO : Installing Rails 4 view instrumentation
+[2016-02-29 15:36:44 -0800 AAStudent dp 1 (#11) (575)] INFO : Installing Rails 4 Error instrumentation
+[2016-02-29 15:36:44 -0800 AAStudent dp 1 (#11) (575)] INFO : Finished instrumentation
+[2016-02-29 15:36:45 -0800 AAStudent dp 1 (#11) (575)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-02-29 15:36:54 -0800 AAStudent dp 1 (#11) (575)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-02-29 15:36:54 -0800 AAStudent dp 1 (#11) (575)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-02-29 15:48:56 -0800 AAStudent dp 1 (#11) (575)] INFO : Starting Agent shutdown
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Starting the New Relic agent in "development" environment.
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] WARN : No configuration file found. Working directory = /Users/appacademy/Desktop/catalyst/catalyst
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] WARN : Looked in these locations (based on defaults): /Users/appacademy/Desktop/catalyst/catalyst/config/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/config/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/newrelic.yml, /Users/appacademy/.newrelic/newrelic.yml, /Users/appacademy/newrelic.yml
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Environment: development
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Dispatcher: webrick
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Application: development
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Installing ActiveJob instrumentation
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Installing Net instrumentation
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Installing Rails 3+ middleware instrumentation
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Installing Rails 4 Controller instrumentation
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Installing Rails 4 view instrumentation
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Installing Rails 4 Error instrumentation
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Finished instrumentation
+[2016-02-29 15:49:15 -0800 AAStudent dp 1 (#11) (788)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-02-29 15:49:17 -0800 AAStudent dp 1 (#11) (788)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-02-29 15:49:17 -0800 AAStudent dp 1 (#11) (788)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-02-29 15:50:59 -0800 AAStudent dp 1 (#11) (788)] INFO : Starting Agent shutdown
+[2016-02-29 15:51:31 -0800 AAStudent dp 1 (#11) (884)] INFO : Starting the New Relic agent in "development" environment.
+[2016-02-29 15:51:31 -0800 AAStudent dp 1 (#11) (884)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-02-29 15:51:31 -0800 AAStudent dp 1 (#11) (884)] WARN : No configuration file found. Working directory = /Users/appacademy/Desktop/catalyst/catalyst
+[2016-02-29 15:51:31 -0800 AAStudent dp 1 (#11) (884)] WARN : Looked in these locations (based on defaults): /Users/appacademy/Desktop/catalyst/catalyst/config/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/config/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/newrelic.yml, /Users/appacademy/.newrelic/newrelic.yml, /Users/appacademy/newrelic.yml
+[2016-02-29 15:51:31 -0800 AAStudent dp 1 (#11) (884)] INFO : Environment: development
+[2016-02-29 15:51:31 -0800 AAStudent dp 1 (#11) (884)] INFO : Dispatcher: webrick
+[2016-02-29 15:51:31 -0800 AAStudent dp 1 (#11) (884)] INFO : Application: development
+[2016-02-29 15:51:31 -0800 AAStudent dp 1 (#11) (884)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-02-29 15:51:32 -0800 AAStudent dp 1 (#11) (884)] INFO : Installing ActiveJob instrumentation
+[2016-02-29 15:51:32 -0800 AAStudent dp 1 (#11) (884)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-02-29 15:51:32 -0800 AAStudent dp 1 (#11) (884)] INFO : Installing Net instrumentation
+[2016-02-29 15:51:32 -0800 AAStudent dp 1 (#11) (884)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-02-29 15:51:32 -0800 AAStudent dp 1 (#11) (884)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-02-29 15:51:32 -0800 AAStudent dp 1 (#11) (884)] INFO : Installing Rails 3+ middleware instrumentation
+[2016-02-29 15:51:32 -0800 AAStudent dp 1 (#11) (884)] INFO : Installing Rails 4 Controller instrumentation
+[2016-02-29 15:51:32 -0800 AAStudent dp 1 (#11) (884)] INFO : Installing Rails 4 view instrumentation
+[2016-02-29 15:51:32 -0800 AAStudent dp 1 (#11) (884)] INFO : Installing Rails 4 Error instrumentation
+[2016-02-29 15:51:32 -0800 AAStudent dp 1 (#11) (884)] INFO : Finished instrumentation
+[2016-02-29 15:51:32 -0800 AAStudent dp 1 (#11) (884)] INFO : Doing deferred dependency-detection before Rack startup
+[2016-02-29 15:51:34 -0800 AAStudent dp 1 (#11) (884)] ERROR : Invalid license key, please contact support@newrelic.com
+[2016-02-29 15:51:34 -0800 AAStudent dp 1 (#11) (884)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-02-29 17:28:45 -0800 AAStudent dp 1 (#11) (1783)] INFO : Starting the New Relic agent in "development" environment.
+[2016-02-29 17:28:45 -0800 AAStudent dp 1 (#11) (1783)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[2016-02-29 17:28:45 -0800 AAStudent dp 1 (#11) (1783)] WARN : No configuration file found. Working directory = /Users/appacademy/Desktop/catalyst/catalyst
+[2016-02-29 17:28:45 -0800 AAStudent dp 1 (#11) (1783)] WARN : Looked in these locations (based on defaults): /Users/appacademy/Desktop/catalyst/catalyst/config/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/config/newrelic.yml, /Users/appacademy/Desktop/catalyst/catalyst/newrelic.yml, /Users/appacademy/.newrelic/newrelic.yml, /Users/appacademy/newrelic.yml
+[2016-02-29 17:28:45 -0800 AAStudent dp 1 (#11) (1783)] INFO : Environment: development
+[2016-02-29 17:28:45 -0800 AAStudent dp 1 (#11) (1783)] INFO : No known dispatcher detected.
+[2016-02-29 17:28:45 -0800 AAStudent dp 1 (#11) (1783)] INFO : Application: development
+[2016-02-29 17:28:45 -0800 AAStudent dp 1 (#11) (1783)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'. You may also want to try linting your newrelic.yml to ensure it is valid YML.
+[2016-02-29 17:28:46 -0800 AAStudent dp 1 (#11) (1783)] INFO : Installing ActiveJob instrumentation
+[2016-02-29 17:28:46 -0800 AAStudent dp 1 (#11) (1783)] INFO : Installing ActiveRecord 4+ instrumentation
+[2016-02-29 17:28:46 -0800 AAStudent dp 1 (#11) (1783)] INFO : Installing Net instrumentation
+[2016-02-29 17:28:46 -0800 AAStudent dp 1 (#11) (1783)] INFO : Installing deferred Rack::Builder instrumentation
+[2016-02-29 17:28:46 -0800 AAStudent dp 1 (#11) (1783)] INFO : Installing Rack::Builder middleware instrumentation
+[2016-02-29 17:28:46 -0800 AAStudent dp 1 (#11) (1783)] INFO : Installing Rails 3+ middleware instrumentation
+[2016-02-29 17:28:46 -0800 AAStudent dp 1 (#11) (1783)] INFO : Installing Rails 4 Controller instrumentation
+[2016-02-29 17:28:46 -0800 AAStudent dp 1 (#11) (1783)] INFO : Installing Rails 4 view instrumentation
+[2016-02-29 17:28:46 -0800 AAStudent dp 1 (#11) (1783)] INFO : Installing Rails 4 Error instrumentation
+[2016-02-29 17:28:46 -0800 AAStudent dp 1 (#11) (1783)] INFO : Finished instrumentation
+[2016-02-29 17:49:44 -0800 AAStudent dp 1 (#11) (884)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: Missing template api/projects/create, application/create with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/appacademy/Desktop/catalyst/catalyst/app/views"
+
+[2016-02-29 17:52:56 -0800 AAStudent dp 1 (#11) (884)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: can't write unknown attribute `cat`
+[2016-02-29 17:53:24 -0800 AAStudent dp 1 (#11) (884)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `creator_id' for #<Api::ProjectsController:0x007fa584422490>
+[2016-02-29 17:55:13 -0800 AAStudent dp 1 (#11) (884)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined local variable or method `creator_id' for #<Api::ProjectsController:0x007fa57da67c08>
