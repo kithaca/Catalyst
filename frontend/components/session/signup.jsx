@@ -23,6 +23,24 @@ var Signup = React.createClass({
     EventEmitter.dispatch("TOGGLE_LOGIN");
   },
 
+  validateUser: function (user) {
+    this.errors = {};
+    if (user.username.length === 0) {
+      this.errors.username = true; // need validation for existing user?
+    }
+    if (user.password.length < 6) {
+      this.errors.password = true;
+    }
+    if (user.email.length === 0) {
+      this.errors.email = true;
+    }
+    if (Object.keys(this.errors).length > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+
   createUser: function (event) {
     event.preventDefault();
     var user = {};
@@ -30,11 +48,22 @@ var Signup = React.createClass({
     Object.keys(that.state).forEach(function (key) {
       user[key] = that.state[key];
     });
-    ApiUtil.createUser({user: user}, function () {});
-    that.setState(that.blankForm);
+
+    if (that.validateUser(user)) {
+      ApiUtil.createUser({user: user}, function () {});
+      that.setState(that.blankForm);
+
+    } else {
+      that.forceUpdate();
+    }
   },
 
   render: function () {
+
+    if (this.errors === undefined) {
+      this.errors = {};
+    }
+
     return(
       <div>
         <div>
@@ -47,6 +76,8 @@ var Signup = React.createClass({
               placeholder="Username"
               valueLink={this.linkState("username")}
               />
+            {this.errors.username ? <h6 className="error">Username can't be blank.</h6> : <p></p>}
+
           </div>
 
           <div>
@@ -55,6 +86,7 @@ var Signup = React.createClass({
               placeholder="Email"
               valueLink={this.linkState("email")}
               />
+            {this.errors.email ? <h6 className="error">Email can't be blank.</h6> : <p></p>}
           </div>
 
           <div>
@@ -63,6 +95,7 @@ var Signup = React.createClass({
               placeholder="Password"
               valueLink={this.linkState("password")}
               />
+            {this.errors.password ? <h6 className="error">Password must be at least 6 characters.</h6> : <p></p>}
           </div>
 
 

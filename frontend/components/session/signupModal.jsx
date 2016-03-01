@@ -6,8 +6,7 @@ var EventEmitter = require('./eventEmitter');
 var SignupModal = React.createClass({
 
     componentDidMount: function () {
-      EventEmitter.subscribe("TOGGLE_SIGNUP", this.toggleDialog('OutlineModal'));
-      // EventEmitter.subscribe("SHOW_LOGIN", this.toggleDialog('OutlineModal'));
+      EventEmitter.subscribe("TOGGLE_SIGNUP", this.toggleDialog('OutlineModal').bind(this));
     },
 
     toggleDialog: function (ref) {
@@ -23,7 +22,7 @@ var SignupModal = React.createClass({
       </div>);
     },
 
-    getTiggerAndModal: function(modalName){
+    getTriggerAndModal: function(modalName){
         var Modal = Boron[modalName];
 
         return (
@@ -42,7 +41,7 @@ var SignupModal = React.createClass({
         var that = this;
         return (
             <div className="container">
-              {that.getTiggerAndModal('OutlineModal')}
+              {that.getTriggerAndModal('OutlineModal')}
             </div>
         );
     }

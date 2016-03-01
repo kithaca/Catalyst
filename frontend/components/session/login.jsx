@@ -21,6 +21,21 @@ var Login = React.createClass({
     EventEmitter.dispatch("TOGGLE_SIGNUP");
   },
 
+  validateUser: function (user) {
+    this.errors = {};
+    if (user.username.length === 0) {
+      this.errors.username = true; // need validation for existing user?
+    }
+    if (user.password.length === 0) {
+      this.errors.password = true;
+    }
+    if (Object.keys(this.errors).length > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  },
+
   logInUser: function functionName(event) {
     event.preventDefault();
     var user = {};
@@ -28,13 +43,21 @@ var Login = React.createClass({
     Object.keys(that.state).forEach(function (key) {
       user[key] = that.state[key];
     });
-    ApiUtil.login({user: user}, function () {
-      that.props.toggleLogin();
-      that.props.closeModal();
-    });
+
+    if (that.validateUser(user)) {
+      ApiUtil.login({user: user}, function () {
+        that.props.toggleLogin();
+        that.props.closeModal();
+      });
+    } else {
+      that.forceUpdate();
+    }
   },
 
   render: function () {
+    if (this.errors === undefined) {
+      this.errors = {};
+    }
     return(
         <div>
           <h2 className="modal-header">Catalyst</h2>
@@ -46,6 +69,7 @@ var Login = React.createClass({
                   placeholder="Username"
                   valueLink={this.linkState("username")}
                   />
+                {this.errors.username ? <h6 className="error">Please enter a username.</h6> : <p></p>}
               </div>
 
               <div>
@@ -54,6 +78,7 @@ var Login = React.createClass({
                   placeholder="Password"
                   valueLink={this.linkState("password")}
                   />
+                {this.errors.password ? <h6 className="error">Please enter a password.</h6> : <p></p>}
               </div>
 
               <br></br>

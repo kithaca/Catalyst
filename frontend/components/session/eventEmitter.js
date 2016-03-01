@@ -2,7 +2,7 @@ var EventEmitter = {
     _events: {},
     dispatch: function (event, data) {
       if (!this._events[event]) {
-        return; 
+        return;
       }
       for (var i = 0; i < this._events[event].length; i++) {
         this._events[event][i]();

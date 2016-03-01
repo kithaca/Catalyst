@@ -79,7 +79,7 @@ var NewProjectForm = React.createClass({
   },
 
   renderLogin: function () {
-    EventEmitter.dispatch("SHOW_LOGIN");
+    EventEmitter.dispatch("TOGGLE_LOGIN");
   },
 
   render: function () {

@@ -49,25 +49,26 @@
 .button {
   font-size: 33px;
   position: relative;
-  background-color: crimson;
+  background-color: teal;
   color: white;
   padding: 15px 30px;
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
-  border: 3px solid crimson;
+  border: 3px solid teal;
   transition-duration: 0.3s;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .button:hover {
   background-color: white;
-  color: crimson;
+  color: teal;
 }
 
 .button:after {
     content: "";
-    background: crimson;
+    background: teal;
     display: block;
     position: absolute;
     padding-top: 300%;
@@ -83,4 +84,9 @@
     margin: 0;
     opacity: 1;
     transition: 0s
+}
+
+.error {
+  color: lightcoral;
+  font-weight: normal;
 }
