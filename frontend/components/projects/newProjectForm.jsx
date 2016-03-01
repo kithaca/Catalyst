@@ -2,6 +2,9 @@ var React = require('react');
 var SessionStore = require('../../stores/sessionStore');
 var ApiUtil = require('../../util/apiUtil');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var History = require('react-router').History;
+var LoginModal = require('../session/loginModal');
+var EventEmitter = require('../session/eventEmitter');
 
 var currentDate = function () {
   var today = new Date();
@@ -67,17 +70,26 @@ var NewProjectForm = React.createClass({
 
     if (this.validateProject(project)) {
       project["creator_name"] = SessionStore.currentUser().username;
-      ApiUtil.createProject({project: project});
+      ApiUtil.createProject({project: project}, function (id) {
+        that.props.history.pushState(null, "projects/" + id, {});
+      });
     }
   },
 
-  render: function () {
-    return(
+  renderLogin: function () {
+    EventEmitter.dispatch("SHOW_LOGIN");
+  },
 
+  render: function () {
+    var loggedIn;
+    if (Object.keys(SessionStore.currentUser()).length > 0) {
+      loggedIn = true;
+    } else {
+      loggedIn = false;
+    }
+    return(
           <div>
             <h1>Create New Project</h1>
-
-            <form onSubmit={this.createProject}>
 
               <div>
                 <label>
@@ -155,9 +167,9 @@ var NewProjectForm = React.createClass({
 
               <br />
 
-              <button className="button">Create Project</button>
+              <button onClick={loggedIn ? this.createProject : this.renderLogin}
+                    className="button">Create Project</button>
 
-            </form>
           </div>
     );
   }

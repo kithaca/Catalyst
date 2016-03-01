@@ -78,8 +78,7 @@ var ApiUtil = {
     });
   },
 
-  createProject: function (project) {
-    debugger;
+  createProject: function (project, callback) {
     $.ajax({
       url: 'api/projects',
       method: 'POST',
@@ -88,9 +87,9 @@ var ApiUtil = {
         console.log("new project not added");
       },
       success: function (data) {
-        debugger;
         ApiActions.addNewProject(data);
         console.log("new project added");
+        callback(data.id);
       }
     });
   }

@@ -30,9 +30,8 @@ var Login = React.createClass({
 
   render: function () {
     return(
-        <div onClick={this.props.toggleLogin}>
+        <div>
           Log In
-
           <div>
             <form className="login-user" onSubmit={this.logInUser}>
               <div>

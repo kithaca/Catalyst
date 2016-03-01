@@ -12,7 +12,8 @@ var App = React.createClass({
   mixins: [History],
 
   getInitialState: function () {
-    return { currentUser: SessionStore.currentUser(), loggedIn: false,
+    var currentUser = SessionStore.currentUser();
+    return { currentUser: currentUser, loggedIn: (Object.keys(currentUser) > 0),
       showLoginForm: false };
   },
 
@@ -56,7 +57,6 @@ var App = React.createClass({
   },
 
   render: function () {
-
     return(
       <div className="app">
         <Navbar showLogin={this.showLogin}
@@ -64,10 +64,16 @@ var App = React.createClass({
                  loggedIn={this.loggedIn}
                    logOut={this.logUserOut}
                    />
-      {this.props.children}
+
+         {this.props.children && React.cloneElement(
+           this.props.children, {loggedIn: this.state.loggedIn})}
+
       </div>
     );
   }
 });
 
 module.exports = App;
+
+/*{this.props.children && React.cloneElement(this.props.children, {
+            loggedIn: this.state.loggedIn})} */

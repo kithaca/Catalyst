@@ -8,10 +8,9 @@ class Api::ProjectsController < ApplicationController
     @project = Project.new(project_params)
     username = params[:project][:creator_name]
     user = User.find_by_username(username)
-    debugger
     @project["creator_id"] = user.id;
     if @project.save
-      render json: {message: "Project created."}
+      render json: @project
     else
       # render json: {errors: @project.errors.full_messages}
     end
