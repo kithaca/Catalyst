@@ -1,8 +1,6 @@
 # Catalyst
 
-Heroku link:
-
-[heroku]: http://www.herokuapp.com
+[Link]: www.catalyze.tech
 
 ## Minimum Viable Product
 

@@ -16,7 +16,6 @@ var SignupModal = React.createClass({
       return (
         <div className="container">
           <Signup toggleLogin={this.props.toggleLogin} closeModal={this.toggleDialog(modalName)}></Signup>
-          <button className="btn" onClick={this.toggleDialog(modalName)}>Close</button>
       </div>);
     },
 

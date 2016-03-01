@@ -108,14 +108,14 @@ var NewProjectForm = React.createClass({
                   Category
                   <select valueLink={this.linkState("category")}>
                     <option value="">Select a category...</option>
-                    <option value="biology">Biology</option>
-                    <option value="chemistry">Chemistry</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Chemistry">Chemistry</option>
                     <option value="Engineering">Engineering</option>
                     <option value="Medicine">Medicine</option>
                     <option value="Physics">Physics</option>
                   </select>
                 </label>
-                <p className="error">{this.errors.title ? "Title " + this.errors.title : ""}</p>
+                <p className="error">{this.errors.category ? "Category " + this.errors.category : ""}</p>
               </div>
 
               <div>

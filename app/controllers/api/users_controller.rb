@@ -10,8 +10,8 @@ class Api::UsersController < ApplicationController
       log_in!(@user)
       render json: {message: "New user created."}
     else
-      flash.now[:errors] = @user.errors.full_messages
-      render json: {messsage: "ERROR"}
+      # flash.now[:errors] = @user.errors.full_messages
+      # render json: {messsage: "ERROR"}
     end
   end
 

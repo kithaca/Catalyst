@@ -30,47 +30,54 @@ var Signup = React.createClass({
 
   render: function () {
     return(
-      <form className="new-user" onSubmit={this.createUser}>
+      <div>
         <div>
-          <label>
-            Username
-            <input
+          <h2 className="modal-header">Catalyst</h2>
+        </div>
+        <form className="new-user" onSubmit={this.createUser}>
+          <div>
+            <input className="form-input"
               type="text"
+              placeholder="Username"
               valueLink={this.linkState("username")}
               />
-          </label>
-        </div>
+          </div>
 
-        <br></br>
-
-        <div>
-          <label>
-            Email
-            <input
+          <div>
+            <input className="form-input"
               type="email"
+              placeholder="Email"
               valueLink={this.linkState("email")}
               />
-          </label>
-        </div>
+          </div>
 
-        <br />
-
-        <div>
-          <label>
-            Password
-            <input
+          <div>
+            <input className="form-input"
               type="password"
+              placeholder="Password"
               valueLink={this.linkState("password")}
               />
-          </label>
-        </div>
+          </div>
 
 
-        <br></br>
+          <br></br>
 
-        <button className="signup-button">Create Account</button>
+          <button className="auth-button signup-btn">Create Account</button>
 
-      </form>
+          <div className="option-container">
+            <div className="lazy-options">
+              <h5>Don't have an account?</h5>
+              <button className="lazy-login-btn">>>Sign Up</button>
+            </div>
+            <br/>
+            <div className="lazy-options">
+              <h5>Just exploring?</h5>
+              <button className="lazy-login-btn">>>Guest Login</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
 
 
     );

@@ -31,33 +31,40 @@ var Login = React.createClass({
   render: function () {
     return(
         <div>
-          Log In
+          <h2 className="modal-header">Catalyst</h2>
           <div>
-            <form className="login-user" onSubmit={this.logInUser}>
+            <form onSubmit={this.logInUser}>
               <div>
-                <label>
-                  Username
-                  <input
-                    type="text"
-                    valueLink={this.linkState("username")}
-                    />
-                </label>
+                <input className="form-input"
+                  type="text"
+                  placeholder="Username"
+                  valueLink={this.linkState("username")}
+                  />
               </div>
 
               <div>
-                <label>
-                  Password
-                  <input
-                    type="password"
-                    valueLink={this.linkState("password")}
-                    />
-                </label>
+                <input className="form-input"
+                  type="password"
+                  placeholder="Password"
+                  valueLink={this.linkState("password")}
+                  />
               </div>
-
 
               <br></br>
 
-              <button className="login-button">Log In</button>
+              <button onClick={this.logInUser} className="auth-button">Log In</button>
+
+              <div className="option-container">
+                <div className="lazy-options">
+                  <h5>Don't have an account?</h5>
+                  <button className="lazy-login-btn">>>Sign Up</button>
+                </div>
+                <br/>
+                <div className="lazy-options">
+                  <h5>Just exploring?</h5>
+                  <button className="lazy-login-btn">>>Guest Login</button>
+                </div>
+              </div>
 
             </form>
           </div>

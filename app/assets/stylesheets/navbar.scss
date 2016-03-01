@@ -37,29 +37,6 @@
 
 }
 
-#btn {
-  outline: none;
-  font-size: 17px;
-  font-weight: 300;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 0px;
-  /*font-variant: small-caps;*/
-  background: teal;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.container {
-  text-align: center;
-  color: red;
-}
-
-.title {
-  margin: 0;
-  font-weight: 400;
-}
-
 
 .nav-item, .auth, .nav-item a {
   transition-duration: 0.3s;
@@ -75,8 +52,97 @@
   color: teal;
 }
 
-
 .auth:hover {
   background-color: white;
-  // color: teal !important;
+}
+
+#btn {
+  outline: none;
+  font-size: 17px;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 0px;
+  /*font-variant: small-caps;*/
+  background: teal;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#btn:hover {
+  background-color: white;
+  color: teal;
+}
+
+.container {
+  text-align: center;
+  color: mediumturquoise;
+  background-color: black;
+  // opacity: .9;
+}
+
+.form-input {
+  font: inherit;
+  margin-bottom: 10px;
+  background-color: gainsboro;
+}
+
+.modal-header {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin: 0;
+}
+
+.auth-button {
+  bottom: 15px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  position: relative;
+  background-color: teal;
+  color: white;
+  padding: 15px 88px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 3px solid teal;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.signup-btn {
+  padding: 15px 37px;
+}
+
+.option-container {
+  text-align: left;
+  margin-left: 100px;
+}
+
+.lazy-options {
+  display: inline;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.lazy-options > * {
+  display: inherit;
+  color: gainsboro;
+  margin-bottom: 20px;
+}
+
+.lazy-login-btn {
+  margin-left: 10px;
+  font-size: 14px;
+  position: relative;
+  border: 1px solid teal;
+  border-radius: 3px;
+  background-color: black;
+  color: mediumturquoise;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  cursor: pointer;
 }

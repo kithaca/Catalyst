@@ -19,7 +19,6 @@ var LoginModal = React.createClass({
     return (
       <div className="container">
         <Login toggleLogin={this.props.toggleLogin} closeModal={this.toggleDialog(modalName)}></Login>
-        <button className="btn" onClick={this.toggleDialog(modalName)}>Close</button>
     </div>);
   },
 
@@ -50,3 +49,5 @@ var LoginModal = React.createClass({
 });
 
 module.exports = LoginModal;
+
+/* Close modal button: <button className="close-X" onClick={this.toggleDialog(modalName)}>X</button> */
