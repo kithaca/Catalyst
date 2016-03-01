@@ -1,6 +1,7 @@
 # Catalyst
 
-[Link]: www.catalyze.tech
+[Link][link]
+[link]: www.catalyze.tech
 
 ## Minimum Viable Product
 
@@ -50,21 +51,21 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] create `Update` model
 - [x] seed the database with a small amount of test data
 - [ ] CRUD API for projects (`ProjectsController`, `UpdatesController`)
-- [ ] jBuilder views
-- [ ] set up Webpack & Flux scaffold
-- [ ] set up `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
+- [x] jBuilder views
+- [x] set up Webpack & Flux scaffold
+- [x] set up `APIUtil` to interact with the API
+- [x] test out API interaction in the console.
 
 ### Phase 3: Flux Architecture and Router (2 days)
 
 **Objective:** Projects can be created, read, edited and destroyed through the user interface. Project updates can be created.
 
-- [ ] set up the flux loop with skeleton files
-- [ ] set up React Router
+- [x] set up the flux loop with skeleton files
+- [x] set up React Router
 - implement each project component, building out the flux loop as needed.
-  - [ ] `ProjectsIndex`
-  - [ ] `ProjectIndexItem`
-  - [ ] `NewProjectForm`
+  - [x] `ProjectsIndex`
+  - [x] `ProjectIndexItem`
+  - [x] `NewProjectForm`
   - [ ] `NewUpdateForm`
 
 ### Phase 4: Search (1 day)
@@ -75,7 +76,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
-- [ ] make signup/signin appear on top of home page
+- [x] make signup/signin appear on top of home page
 - [ ] customize individual userpage so users can view projects they have backed and created
 - [ ] polish styles
 
