@@ -93,6 +93,8 @@ var NewProjectForm = React.createClass({
           <div className="form group">
             <h1 className="form-title">Create New Project</h1>
 
+            <div className="form-items">
+
               <div>
                   <input
                     type="text"
@@ -120,7 +122,8 @@ var NewProjectForm = React.createClass({
               <div>
                 <label>
                   Tagline
-                  <textarea rows="5" cols="30"
+                  <br />
+                  <textarea rows="3" cols="40"
                     className="form-input"
                     placeholder="Enter a 1 sentence summary of your project."
                     valueLink={this.linkState("tagline")}
@@ -132,6 +135,7 @@ var NewProjectForm = React.createClass({
               <div>
                 <label>
                   Funding Goal
+                  <br />
                   $<input
                     type="text"
                     className="form-input"
@@ -144,6 +148,7 @@ var NewProjectForm = React.createClass({
               <div>
                 <label>
                   Funding Deadline
+                  <br />
                   <input
                         className="form-input"
                          type="date"
@@ -158,7 +163,8 @@ var NewProjectForm = React.createClass({
               <div>
                 <label>
                   Description
-                  <textarea rows="10" cols="30"
+                  <br />
+                  <textarea rows="7" cols="40"
                     className="form-input"
                     placeholder="Enter a detailed description of your project."
                     valueLink={this.linkState("description")}
@@ -172,6 +178,7 @@ var NewProjectForm = React.createClass({
               <button onClick={loggedIn ? this.createProject : this.renderLogin}
                     className="button">Create Project</button>
 
+            </div>
           </div>
     );
   }
