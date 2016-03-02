@@ -37,7 +37,6 @@
 
 }
 
-
 .nav-item, .auth, .nav-item a {
   transition-duration: 0.3s;
 }
@@ -54,6 +53,25 @@
 
 .auth:hover {
   background-color: white;
+}
+
+.search-form {
+  margin: 0;
+  float: left;
+  padding: 0;
+  height: 10%;
+  width: auto;
+}
+
+#search {
+  margin: 3.5%;
+  margin-left: 10%;
+  padding-left: 12px;
+  font-size: 20px;
+  background-color: teal;
+  border: none;
+  width: 150%;
+  color: white;
 }
 
 #btn {

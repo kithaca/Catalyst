@@ -47,7 +47,7 @@ var Navbar = React.createClass({
             New Project
           </Link>
 
-          
+          <Searchbar />
 
           {displaySignUp ? <li className="nav-item auth">{signUp}</li> : <p></p>}
           {displayProfile ? <li className="nav-item auth" id="profile">{profile}</li> : <p></p>}
