@@ -10,8 +10,11 @@ var LoginModal = React.createClass({
   },
 
   toggleDialog: function (ref) {
-    return (function () {
-      this.refs[ref].toggle();
+    return (
+      function () {
+        if (this.refs[ref]) {
+          this.refs[ref].toggle();
+        }
     }.bind(this));
   },
 

@@ -16,7 +16,8 @@ var Login = React.createClass({
     return (this.blankForm);
   },
 
-  renderSignup: function () {
+  renderSignup: function (event) {
+    event.preventDefault();
     EventEmitter.dispatch("TOGGLE_LOGIN")
     EventEmitter.dispatch("TOGGLE_SIGNUP");
   },

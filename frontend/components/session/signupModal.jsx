@@ -11,7 +11,9 @@ var SignupModal = React.createClass({
 
     toggleDialog: function (ref) {
         return (function () {
-          this.refs[ref].toggle();
+          if (this.refs[ref]) {
+            this.refs[ref].toggle();
+          }
         }.bind(this));
     },
 

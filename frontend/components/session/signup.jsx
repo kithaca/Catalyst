@@ -18,8 +18,8 @@ var Signup = React.createClass({
     return (this.blankForm);
   },
 
-  renderLogin: function () {
-    // debugger;
+  renderLogin: function (event) {
+    event.preventDefault();
     EventEmitter.dispatch("TOGGLE_SIGNUP")
     EventEmitter.dispatch("TOGGLE_LOGIN");
   },
@@ -104,6 +104,7 @@ var Signup = React.createClass({
           <br></br>
 
           <button className="auth-button signup-btn">Create Account</button>
+        </form>
 
           <div className="option-container">
             <div className="lazy-options">
@@ -118,7 +119,6 @@ var Signup = React.createClass({
             </div>
           </div>
 
-        </form>
       </div>
 
 

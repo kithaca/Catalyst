@@ -90,25 +90,23 @@ var NewProjectForm = React.createClass({
       loggedIn = false;
     }
     return(
-          <div>
-            <h1>Create New Project</h1>
+          <div className="form group">
+            <h1 className="form-title">Create New Project</h1>
 
               <div>
-                <label>
-                  Title
                   <input
                     type="text"
+                    className="form-input"
                     placeholder="Project title"
                     valueLink={this.linkState("title")}
                     />
-                </label>
                 <p className="error">{this.errors.title ? "Title " + this.errors.title : ""}</p>
               </div>
 
               <div>
-                <label>
-                  Category
-                  <select valueLink={this.linkState("category")}>
+                  <select
+                    className="dropdown"
+                    valueLink={this.linkState("category")}>
                     <option value="">Select a category...</option>
                     <option value="Biology">Biology</option>
                     <option value="Chemistry">Chemistry</option>
@@ -116,7 +114,6 @@ var NewProjectForm = React.createClass({
                     <option value="Medicine">Medicine</option>
                     <option value="Physics">Physics</option>
                   </select>
-                </label>
                 <p className="error">{this.errors.category ? "Category " + this.errors.category : ""}</p>
               </div>
 
@@ -124,7 +121,7 @@ var NewProjectForm = React.createClass({
                 <label>
                   Tagline
                   <textarea rows="5" cols="30"
-                    type="tagline"
+                    className="form-input"
                     placeholder="Enter a 1 sentence summary of your project."
                     valueLink={this.linkState("tagline")}
                     />
@@ -137,6 +134,7 @@ var NewProjectForm = React.createClass({
                   Funding Goal
                   $<input
                     type="text"
+                    className="form-input"
                     valueLink={this.linkState("goal_amt")}
                     />
                 </label>
@@ -147,6 +145,7 @@ var NewProjectForm = React.createClass({
                 <label>
                   Funding Deadline
                   <input
+                        className="form-input"
                          type="date"
                           min={new Date()}
                           placeholder={currentDate()}
@@ -160,6 +159,7 @@ var NewProjectForm = React.createClass({
                 <label>
                   Description
                   <textarea rows="10" cols="30"
+                    className="form-input"
                     placeholder="Enter a detailed description of your project."
                     valueLink={this.linkState("description")}
                   />
