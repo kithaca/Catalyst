@@ -41,8 +41,8 @@ var ProjectDetail = React.createClass({
 
         <div className="project-display">
           <div className="image-wrapper">
-            <img src="http://www.cutestpaw.com/wp-content/uploads/2012/01/Cuddling-Kittens.jpg"
-                 alt="snuggling kittens"
+            <img src={this.state.project.image_url}
+                 alt="project_image"
             className="project-pic" />
           </div>
 

@@ -4,6 +4,7 @@ var Link = require('react-router').Link;
 var Login = require('../session/login');
 var LoginModal = require('../session/loginModal');
 var SignupModal = require('../session/signupModal');
+var Searchbar = require ('./searchbar');
 
 var Navbar = React.createClass({
 
@@ -45,6 +46,8 @@ var Navbar = React.createClass({
           <Link to="new-project" className="nav-item">
             New Project
           </Link>
+
+          
 
           {displaySignUp ? <li className="nav-item auth">{signUp}</li> : <p></p>}
           {displayProfile ? <li className="nav-item auth" id="profile">{profile}</li> : <p></p>}

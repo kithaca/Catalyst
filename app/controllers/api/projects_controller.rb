@@ -42,7 +42,7 @@ class Api::ProjectsController < ApplicationController
   private
   def project_params
     params.require(:project).permit(:title, :category, :tagline,
-      :description, :goal_amt, :start_date, :deadline)
+      :description, :goal_amt, :start_date, :deadline, :image_url)
   end
 
 end

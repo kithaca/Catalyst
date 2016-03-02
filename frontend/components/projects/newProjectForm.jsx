@@ -5,7 +5,6 @@ var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var History = require('react-router').History;
 var LoginModal = require('../session/loginModal');
 var EventEmitter = require('../session/eventEmitter');
-var UploadButton = require('../images/uploadButton');
 
 var currentDate = function () {
   var today = new Date();
@@ -46,7 +45,6 @@ var NewProjectForm = React.createClass({
   },
 
   validateProject: function (project) {
-    debugger;
     this.errors = {};
     var that = this;
     Object.keys(project).forEach(function (key) {
@@ -94,10 +92,10 @@ var NewProjectForm = React.createClass({
       cropping: 'server',
       cropping_aspect_ratio: 4/3,
     };
-    debugger;
     e.preventDefault();
-    var callback = function (error,results) {
+    var callback = function (error, results) {
       if(!error) {
+        debugger;
         this.setState({ image_url: results[0].url });
       }
     }.bind(this);
@@ -183,6 +181,11 @@ var NewProjectForm = React.createClass({
                 <p className="error">{this.errors.deadline ? this.errors.deadline : ""}</p>
               </div>
 
+
+              <br />
+            </div>
+
+            <div className="photo-upload">
               <div>
                 <label>
                   Description
@@ -191,21 +194,18 @@ var NewProjectForm = React.createClass({
                     className="form-input"
                     placeholder="Enter a detailed description of your project."
                     valueLink={this.linkState("description")}
-                  />
-              </label>
-              <p className="error">{this.errors.description ? "Description " + this.errors.description : ""}</p>
+                    />
+                </label>
+                <p className="error">{this.errors.description ? "Description " + this.errors.description : ""}</p>
               </div>
-
-              <br />
 
               <div>
-                <label>
-                  Upload a photo
-                  <br />
-                  <button onClick={this.setImageUrl}/>
-                </label>
+                <button className="button" id="upload" onClick={this.setImageUrl}>
+                  Upload Photo
+                </button>
+                <p className="error">{this.errors.image_url ? "You must upload a photo." : ""}</p>
               </div>
-
+              <br />
               <button onClick={loggedIn ? this.createProject : this.renderLogin}
                     className="button">Create Project</button>
 
