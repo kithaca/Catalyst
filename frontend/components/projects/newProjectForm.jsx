@@ -5,6 +5,7 @@ var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var History = require('react-router').History;
 var LoginModal = require('../session/loginModal');
 var EventEmitter = require('../session/eventEmitter');
+var UploadButton = require('../images/uploadButton');
 
 var currentDate = function () {
   var today = new Date();
@@ -33,7 +34,8 @@ var NewProjectForm = React.createClass({
       goal_amt: "",
       start_date: new Date(),
       deadline: currentDate(),
-      description: ""
+      description: "",
+      image_url: ""
     };
   },
 
@@ -44,6 +46,7 @@ var NewProjectForm = React.createClass({
   },
 
   validateProject: function (project) {
+    debugger;
     this.errors = {};
     var that = this;
     Object.keys(project).forEach(function (key) {
@@ -80,6 +83,26 @@ var NewProjectForm = React.createClass({
 
   renderLogin: function () {
     EventEmitter.dispatch("TOGGLE_LOGIN");
+  },
+
+  setImageUrl: function (e) {
+    var options = {
+      cloud_name: window.CLOUDINARY_OPTIONS.cloud_name,
+      upload_preset: window.CLOUDINARY_OPTIONS.upload_preset,
+      theme: "minimal",
+      multiple: false,
+      cropping: 'server',
+      cropping_aspect_ratio: 4/3,
+    };
+    debugger;
+    e.preventDefault();
+    var callback = function (error,results) {
+      if(!error) {
+        this.setState({ image_url: results[0].url });
+      }
+    }.bind(this);
+
+    window.cloudinary.openUploadWidget(options, callback);
   },
 
   render: function () {
@@ -174,6 +197,14 @@ var NewProjectForm = React.createClass({
               </div>
 
               <br />
+
+              <div>
+                <label>
+                  Upload a photo
+                  <br />
+                  <button onClick={this.setImageUrl}/>
+                </label>
+              </div>
 
               <button onClick={loggedIn ? this.createProject : this.renderLogin}
                     className="button">Create Project</button>
