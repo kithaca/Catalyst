@@ -36,6 +36,18 @@ class Project < ActiveRecord::Base
 
   has_one :project_category
 
+  def self.filter(query_string)
+    filtered_projects = Project.find_by_sql("
+      SELECT projects.*
+      FROM projects
+      WHERE UPPER(projects.title) LIKE UPPER('%#{query_string}%')
+      OR UPPER(projects.tagline) LIKE UPPER('%#{query_string}%')
+      OR UPPER(projects.description) LIKE UPPER('%#{query_string}%')
+      OR UPPER(projects.category) LIKE UPPER('%#{query_string}%')
+    ")
+
+    return filtered_projects
+  end
 
 # TODO: need custom validation to ensure start_date is not after deadline
 # TODO: need to keep track of funds and whether goal has been fulfilled

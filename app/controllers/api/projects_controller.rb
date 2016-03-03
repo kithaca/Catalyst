@@ -3,7 +3,6 @@ class Api::ProjectsController < ApplicationController
   def new
   end
 
-
   def create
     @project = Project.new(project_params)
     username = params[:project][:creator_name]
@@ -17,7 +16,16 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.includes(:creator, :backers, :backings)
+    @projects = Project.includes(:creator)
+
+    if params[:query]
+      @projects = Project.filter(params[:query])
+    end
+
+    if params[:category]
+      @projects = Project.filter_by_category(params[:category])
+    end
+
   end
 
   def show

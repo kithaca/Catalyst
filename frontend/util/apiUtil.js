@@ -5,6 +5,7 @@ var ApiUtil = {
   fetchAllProjects: function () {
     $.ajax({
       url: '/api/projects',
+      method: 'GET',
       success: function (projects) {
         ApiActions.receiveAllProjects(projects);
       }
@@ -14,6 +15,7 @@ var ApiUtil = {
   fetchOneProject: function (id) {
     $.ajax({
       url: 'api/projects/' + id,
+      method: 'GET',
       error: function () {
         console.log('Project does not exist.');
       },
@@ -26,6 +28,7 @@ var ApiUtil = {
   fetchCurrentUser: function () {
     $.ajax({
       url: '/api/session/current',
+      method: 'GET',
       success: function (currentUser) {
         ApiActions.receiveCurrentUser(currentUser);
       }
@@ -92,7 +95,40 @@ var ApiUtil = {
         callback(data.id);
       }
     });
-  }
+  },
+
+  fetchSearchedProjects: function (query, callback) {
+    $.ajax({
+      url: 'api/projects',
+      method: 'GET',
+      data: {query: query},
+      error: function () {
+        console.log("Search unsuccessful");
+      },
+      success: function (data) {
+        callback();
+        ApiActions.receiveAllProjects(data);
+        console.log("search complete");
+      }
+    });
+  },
+
+  fetchProjectsByCategory: function (category) {
+    $.ajax({
+      url: 'api/projects',
+      method: 'GET',
+      data: {category: category},
+      error: function () {
+        console.log("Search unsuccessful");
+      },
+      success: function (data) {
+        ApiActions.receiveAllProjects(data);
+
+        console.log("search complete");
+      }
+    });
+  },
+
 
 };
 

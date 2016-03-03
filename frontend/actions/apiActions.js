@@ -49,7 +49,7 @@ var ApiActions = {
       actionType: ProjectConstants.ADD_NEW_PROJECT,
       project: project
     });
-  }
+  },
 
 };
 

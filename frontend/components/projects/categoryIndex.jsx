@@ -2,6 +2,7 @@ var React = require('react');
 var ProjectStore = require('../../stores/projectStore');
 var ApiUtil = require('../../util/apiUtil');
 var History = require('react-router').History;
+var Category = require('./category');
 
 var CategoryIndex = React.createClass({
 
@@ -27,18 +28,13 @@ var CategoryIndex = React.createClass({
       return <div>No cats here :(</div>;
     }
     var that = this;
-    var k = 0; // eventually need to change if each category is component
     return (
-      <div className="category-list">
+      <div className="category-list group">
         {Object.keys(that.state.categories).map(function (category) {
-          k += 1;
-          return (<button to="/" className="category" key={k}>
-          <div>
-            {category}
-            <br />
-            {that.state.categories[category]} projects
-          </div>
-        </button>);
+          var categoryProps = [category, that.state.categories[category]];
+          return (
+            <Category info={categoryProps} />
+          );
         })}
       </div>
     );

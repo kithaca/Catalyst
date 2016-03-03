@@ -65,8 +65,7 @@ var App = React.createClass({
                    logOut={this.logUserOut}
                    />
 
-         {this.props.children && React.cloneElement(
-           this.props.children, {loggedIn: this.state.loggedIn})}
+         {this.props.children}
 
       </div>
     );
