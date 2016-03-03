@@ -3,6 +3,9 @@ var History = require('react-router').History;
 var Link = require('react-router').Link;
 var ProjectStore = require('../../stores/projectStore');
 var ApiUtil = require('../../util/apiUtil');
+var EventEmitter = require('../session/eventEmitter');
+var CatalyzeModal = require('./catalyzeModal');
+var SessionStore = require('../../stores/sessionStore');
 
 var ProjectDetail = React.createClass({
 
@@ -25,6 +28,14 @@ var ProjectDetail = React.createClass({
     this.projectListener.remove();
   },
 
+  catalyzeModal: function () {
+    if (Object.keys(SessionStore.currentUser()).length > 0) {
+      EventEmitter.dispatch("TOGGLE_CATALYZE");
+    } else {
+      EventEmitter.dispatch("TOGGLE_LOGIN");
+    }
+  },
+
   render: function () {
     if (this.state.project === undefined) {
       return <div>Project does not exist :(</div>;
@@ -33,6 +44,7 @@ var ProjectDetail = React.createClass({
     }
 
     var date = Date.now();
+
     return(
       <div className="project-detail">
 
@@ -59,7 +71,13 @@ var ProjectDetail = React.createClass({
           <h3>Goal: ${this.state.project.goal_amt}</h3>
           <h3>{this.state.deadline - date} Days Left</h3>
 
-          <button to="catalyze-form" className="button">Catalyze</button>
+          <button
+            onClick={this.catalyzeModal}
+            className="button">
+            Catalyze
+          </button>
+          <CatalyzeModal project={this.state.project}/>
+
         </div>
 
 
