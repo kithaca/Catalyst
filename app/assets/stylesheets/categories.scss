@@ -1,5 +1,7 @@
+
+
 .category-list {
-  margin: 20% 10%;
+  margin: 15% 10%;
   max-width: 100%;
   position: relative;
   margin-left: 10%;
@@ -7,13 +9,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  // background: red;
+  background-size: cover;
 }
 
 .category {
   font-size: 28px;
   position: relative;
   color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
   padding: 30px 10px;
   margin: 20px;
   text-align: center;
@@ -26,7 +30,6 @@
   height: 150px;
 
   display: flex;
-  background-color: red;
 }
 
 .category:hover {
@@ -65,6 +68,6 @@
 }
 
 #Engineering {
-  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1456978784/medicine2_jgddws.jpg");
+  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1456979036/engineering2_xxlohf.jpg");
   background-size: cover;
 }

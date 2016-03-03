@@ -27,16 +27,21 @@ var CategoryIndex = React.createClass({
     if (Object.keys(this.state.categories).length === 0) {
       return <div>Categories could not be loaded. :(</div>;
     }
+
+    var categories = ["Biology", "Chemistry", "Engineering", "Medicine", "Physics"];
     var that = this;
     return (
+      <div>
+
       <div className="category-list group">
-        {Object.keys(that.state.categories).map(function (category) {
+        {categories.map(function (category) {
           var categoryProps = [category, that.state.categories[category]];
           return (
             <Category info={categoryProps} />
           );
         })}
       </div>
+    </div>
     );
   }
 

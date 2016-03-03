@@ -1,3 +1,4 @@
+
 var React = require('react');
 var ApiUtil = require('../../util/apiUtil');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
@@ -25,7 +26,10 @@ var Searchbar = React.createClass({
   render: function () {
     return(
       <form className="search-form" onSubmit={this.search}>
-          <input className="form-input"
+        <div id="search-logo">
+          🔍
+        </div>
+          	<input className="form-input"
                         id="search"
                       type="text"
                placeholder="Search projects"
