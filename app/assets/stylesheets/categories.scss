@@ -1,30 +1,70 @@
 .category-list {
-  margin: auto;
+  margin: 20% 10%;
   max-width: 100%;
   position: relative;
-  top: 250px;
   margin-left: 10%;
   margin-right: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-#category {
+.category {
   font-size: 28px;
   position: relative;
-  background-color: crimson;
   color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   padding: 30px 10px;
   margin: 20px;
   text-align: center;
   text-decoration: none;
-  border-radius: 5px;
-  border: 3px solid crimson;
+  border-radius: 10px;
+  border: 3px solid black;
   transition-duration: 0.3s;
   cursor: pointer;
-  width: 200px;
-  float: left;
+  min-width: 200px;
+  height: 150px;
+
+  display: flex;
+  background-color: red;
 }
 
-#category:hover {
+.category:hover {
   background-color: white;
   color: crimson;
+}
+
+.category-name {
+  text-align: center;
+  margin: auto;
+}
+
+.category-info {
+  display: none;
+}
+
+#Biology {
+  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1456971212/biology_i99iig.jpg");
+  background-size: cover;
+}
+
+#Chemistry {
+  background-image: url("http://res.cloudinary.com/catalyst/image/upload/c_scale,w_724/v1456977140/chemistry_tql5zn.jpg");
+  background-size: cover;
+}
+
+
+#Physics {
+  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1456977417/physics_htcgil.jpg");
+  background-size: cover;
+}
+
+#Medicine {
+  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1456977963/medicine_v85k6z.jpg");
+  background-size: cover;
+}
+
+#Engineering {
+  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1456978784/medicine2_jgddws.jpg");
+  background-size: cover;
 }

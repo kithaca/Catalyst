@@ -25,7 +25,7 @@ var CategoryIndex = React.createClass({
 
   render: function () {
     if (Object.keys(this.state.categories).length === 0) {
-      return <div>No cats here :(</div>;
+      return <div>Categories could not be loaded. :(</div>;
     }
     var that = this;
     return (

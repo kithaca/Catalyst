@@ -14,12 +14,12 @@ var Category = React.createClass({
 
   render: function () {
     return (
-      <div className="button"
-                  id="category"
+      <div className="category"
+                  id={this.props.info[0]}
              onClick={this.searchByCategory}>
-        {this.props.info[0]}
+        <h3 className="category-name">{this.props.info[0]}</h3>
         <br />
-        {this.props.info[1]} projects
+        <h3 className="category-info">{this.props.info[1]} projects</h3>
       </div>
     );
   }

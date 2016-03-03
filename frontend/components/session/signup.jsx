@@ -20,7 +20,7 @@ var Signup = React.createClass({
 
   renderLogin: function (event) {
     event.preventDefault();
-    EventEmitter.dispatch("TOGGLE_SIGNUP")
+    EventEmitter.dispatch("TOGGLE_SIGNUP");
     EventEmitter.dispatch("TOGGLE_LOGIN");
   },
 

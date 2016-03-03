@@ -13,13 +13,11 @@ var Searchbar = React.createClass({
 
   search: function (e) {
     e.preventDefault();
-    console.log("search beginning");
     var query = this.state.query;
     var that = this;
     if (query.length > 0) {
-      ApiUtil.fetchSearchedProjects(query, function () {
-        that.history.push("/");
-      });
+      ApiUtil.fetchSearchedProjects(query);
+      that.history.pushState(null, "/", {query: query});
     }
 
   },

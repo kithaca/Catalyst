@@ -10,6 +10,10 @@ var Navbar = React.createClass({
 
   mixins: [History],
 
+  goHome: function functionName() {
+    window.location = "/";
+  },
+
   render: function () {
     var showLogin = "hidden";
     if (this.props.showLogin()) {
@@ -35,9 +39,9 @@ var Navbar = React.createClass({
     return(
       <div className="header group">
         <ul className="nav">
-          <Link to="/" className="nav-item" id="logo">
+          <div onClick={this.goHome} className="nav-item" id="logo">
             Catalyst
-          </Link>
+          </div>
 
           <Link to="categories" className="nav-item">
             Categories

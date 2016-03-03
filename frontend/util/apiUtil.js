@@ -97,7 +97,7 @@ var ApiUtil = {
     });
   },
 
-  fetchSearchedProjects: function (query, callback) {
+  fetchSearchedProjects: function (query) {
     $.ajax({
       url: 'api/projects',
       method: 'GET',
@@ -106,7 +106,6 @@ var ApiUtil = {
         console.log("Search unsuccessful");
       },
       success: function (data) {
-        callback();
         ApiActions.receiveAllProjects(data);
         console.log("search complete");
       }
@@ -119,10 +118,8 @@ var ApiUtil = {
       method: 'GET',
       data: {category: category},
       error: function () {
-        console.log("error when searching by category");
       },
       success: function (data) {
-        console.log("projects by category received");
         callback();
         ApiActions.receiveAllProjects(data);
       }
