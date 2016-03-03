@@ -46,7 +46,13 @@ class Project < ActiveRecord::Base
       OR UPPER(projects.category) LIKE UPPER('%#{query_string}%')
     ")
 
-    return filtered_projects
+    filtered_projects
+  end
+
+  def self.filter_by_category(category)
+    filtered_projects = Project.where("category = '#{category}'")
+
+    filtered_projects
   end
 
 # TODO: need custom validation to ensure start_date is not after deadline

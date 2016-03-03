@@ -113,18 +113,18 @@ var ApiUtil = {
     });
   },
 
-  fetchProjectsByCategory: function (category) {
+  fetchProjectsByCategory: function (category, callback) {
     $.ajax({
       url: 'api/projects',
       method: 'GET',
       data: {category: category},
       error: function () {
-        console.log("Search unsuccessful");
+        console.log("error when searching by category");
       },
       success: function (data) {
+        console.log("projects by category received");
+        callback();
         ApiActions.receiveAllProjects(data);
-
-        console.log("search complete");
       }
     });
   },

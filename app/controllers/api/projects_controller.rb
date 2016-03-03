@@ -25,7 +25,6 @@ class Api::ProjectsController < ApplicationController
     if params[:category]
       @projects = Project.filter_by_category(params[:category])
     end
-
   end
 
   def show

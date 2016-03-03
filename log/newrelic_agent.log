@@ -838,3 +838,19 @@
 [2016-03-02 17:14:50 -0800 AAStudent dp 1 (#11) (1803)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `execute' for #<Class:0x007fcbf66c1938>
 [2016-03-02 17:14:50 -0800 AAStudent dp 1 (#11) (1803)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `execute' for #<Class:0x007fcbf66c1938>
 [2016-03-02 17:14:50 -0800 AAStudent dp 1 (#11) (1803)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: undefined method `execute' for #<Class:0x007fcbf66c1938>
+[2016-03-02 17:37:39 -0800 AAStudent dp 1 (#11) (1803)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::UndefinedColumn: ERROR:  column "physics" does not exist
+LINE 1: ...".* FROM "projects" WHERE (UPPER(category) = UPPER(Physics))
+                                                              ^
+: SELECT "projects".* FROM "projects" WHERE (UPPER(category) = UPPER(Physics))
+[2016-03-02 17:55:28 -0800 AAStudent dp 1 (#11) (1803)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::UndefinedColumn: ERROR:  column projects.Chemistry does not exist
+LINE 1: SELECT "projects".* FROM "projects" WHERE "projects"."Chemis...
+                                                  ^
+: SELECT "projects".* FROM "projects" WHERE "projects"."Chemistry" = 'chemistry'
+[2016-03-02 17:56:05 -0800 AAStudent dp 1 (#11) (1803)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::UndefinedColumn: ERROR:  column projects.Chemistry does not exist
+LINE 1: SELECT "projects".* FROM "projects" WHERE "projects"."Chemis...
+                                                  ^
+: SELECT "projects".* FROM "projects" WHERE "projects"."Chemistry" = 'Chemistry'
+[2016-03-02 17:57:21 -0800 AAStudent dp 1 (#11) (1803)] WARN : The error reporting queue has reached 20. The error detail for this and subsequent errors will not be transmitted to New Relic until the queued errors have been sent: PG::UndefinedColumn: ERROR:  column "chemistry" does not exist
+LINE 1: ...CT "projects".* FROM "projects" WHERE (category = Chemistry)
+                                                             ^
+: SELECT "projects".* FROM "projects" WHERE (category = Chemistry)

@@ -7,7 +7,7 @@ var Category = React.createClass({
 
   searchByCategory: function () {
     var that = this;
-    ApiUtil.fetchSearchedProjects(that.props.info[0], function () {
+    ApiUtil.fetchProjectsByCategory(that.props.info[0], function () {
       that.history.push("/");
     });
   },
