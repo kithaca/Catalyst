@@ -3,6 +3,7 @@ var History = require('react-router').History;
 var ProjectStore = require('../../stores/projectStore');
 var ApiUtil = require('../../util/apiUtil');
 var ProjectIndexItem = require('./projectIndexItem');
+var ProjectCarousel = require('./carousel');
 
 var ProjectIndex = React.createClass({
   getInitialState: function () {
@@ -31,19 +32,16 @@ var ProjectIndex = React.createClass({
     });
 
     return(
-      <div className="project-index group">
-        <h1 className="index-title">Explore Projects</h1>
-        <figure className="background-image">
-          <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTBbPt2RA9kHP2Bi54hUR2H8TgR-2cqP8n1Z4LBaA54p0dM0fao"
-               alt="background" />
-        </figure>
-
+      <div>
+        <ProjectCarousel />
+        <div className="project-index group">
         <ul>
           {this.state.projects.map(function (project) {
             return (<ProjectIndexItem key={project.id} project={project} />);
           })}
         </ul>
       </div>
+    </div>
     );
   }
 });

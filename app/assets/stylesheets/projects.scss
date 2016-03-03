@@ -2,13 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.master-container {
+  background-color: black;
+}
+
+.carousel {
+  margin: 0 auto;
+  height: 500px !important;
+}
+
+.slider-decorator-1 * {
+  color: gainsboro;
+  border: none;
+  background-color: black;
+  opacity: 0.8;
+  height: 40px;
+  width: 60px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.slider-decorator-0 * {
+  color: gainsboro;
+  border: none;
+  background-color: black;
+  opacity: 0.8;
+  height: 40px;
+  width: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 0px;
+}
+
+.slider-frame, .slider-list {
+  height: 500px !important;
+}
+
+.slide1 {
+  height: 500px;
+  background-color: black;
+  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1457042966/flowers_nhgxbw.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+
+}
+
 .project-index {
+  background-image: none;
   position: relative;
-  width: 100%;
+  width: 60%;
   display: block;
-  margin: auto;
+  margin: 0 auto;
   padding: 20px;
-  max-width: 1200px;
+  // max-width: 1200px;
   // justify-content: center;
 }
 
@@ -24,16 +71,18 @@
   position: relative;
   height: 500px;
   border: 1px solid midnightblue;
-  box-shadow: 5px 5px 9px midnightblue;
+  // box-shadow: 5px 5px 9px midnightblue;
   margin: 70px 20px;
   overflow: hidden;
   border-radius: 10px;
   width: 29%;
+  max-width: 350px;
   flex-basis: 200px;
   min-width: 100px;
   min-height: 600px;
   color: darkcyan;
   flex: none;
+  background-image: none;
 }
 
 .proj-title {

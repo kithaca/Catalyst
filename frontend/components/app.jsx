@@ -64,8 +64,9 @@ var App = React.createClass({
                  loggedIn={this.loggedIn}
                    logOut={this.logUserOut}
                    />
-
-         {this.props.children}
+        <div className="master-container">
+          {this.props.children}
+        </div>
 
       </div>
     );
