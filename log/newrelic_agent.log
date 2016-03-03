@@ -854,3 +854,4 @@ LINE 1: SELECT "projects".* FROM "projects" WHERE "projects"."Chemis...
 LINE 1: ...CT "projects".* FROM "projects" WHERE (category = Chemistry)
                                                              ^
 : SELECT "projects".* FROM "projects" WHERE (category = Chemistry)
+[2016-03-02 21:40:57 -0800 AAStudent dp 1 (#11) (1803)] INFO : Starting Agent shutdown
