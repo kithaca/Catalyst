@@ -10,10 +10,15 @@ var ProjectIndexItem = React.createClass({
   },
 
   render: function () {
+    var thumbnailStyle = {
+      backgroundImage: 'url(' + this.props.project.image_url + ')'
+    };
+    // debugger;
     return(
       <li className="project-index-item">
-          <img className="thumbnail"
-            onClick={this.showProjectDetail}
+          <div className="thumbnail"
+                 onClick={this.showProjectDetail}
+                 style={thumbnailStyle}
                    src={this.props.project.image_url}
                    alt="project_image" />
         <h4 className="proj-category">{this.props.project.category}</h4>

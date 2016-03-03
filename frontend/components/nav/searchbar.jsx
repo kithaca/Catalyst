@@ -26,7 +26,8 @@ var Searchbar = React.createClass({
   render: function () {
     return(
       <form className="search-form" onSubmit={this.search}>
-        <div id="search-logo">
+        <div id="search-logo"
+             onClick={this.search}>
           🔍
         </div>
           	<input className="form-input"

@@ -24,6 +24,12 @@ var ProjectIndex = React.createClass({
   },
 
   render: function () {
+    this.state.projects.forEach(function (project) {
+      if (project.image_url === null) {
+        project.image_url = "http://res.cloudinary.com/catalyst/image/upload/v1456946867/zs20ledwnp3ou2vpocp7.jpg";
+      }
+    });
+
     return(
       <div className="project-index group">
         <h1 className="index-title">Explore Projects</h1>

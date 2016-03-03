@@ -22,14 +22,17 @@ html, body, header, ul, li {
   color: white;
   background: black;
   vertical-align: baseline;
+  background-image: url("https://i.ytimg.com/vi/KsHUrwV0Kek/maxresdefault.jpg");
+  background-repeat: repeat;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-  background: black;
+  /*background: black;*/
   color: white;
   position: relative;
+  /*background-size: cover;*/
 }
 
 .hidden {
