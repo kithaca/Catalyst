@@ -3,4 +3,4 @@ json.extract! @project, :id, :title, :tagline, :category, :description,
 
 json.creator @project.creator.username
 json.pledged @project.backings.sum(:pledge_amt)
-json.total_backers @project.backers.sum(:id)
+json.total_backers @project.backers.length

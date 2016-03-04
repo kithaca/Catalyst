@@ -21,8 +21,9 @@ var CatalyzeModal = React.createClass({
       return (
         <div className="container">
           <CatalyzeForm
-            closeModal={this.toggleDialog(modalName)}>
-               project={this.props.project}
+            closeModal={this.toggleDialog.bind(this, modalName)}
+                  test="test"
+               project={this.props.project}>
           </CatalyzeForm>
       </div>);
     },

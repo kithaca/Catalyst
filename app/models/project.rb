@@ -13,6 +13,7 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #  tagline     :string           not null
+#  image_url   :string
 #
 
 class Project < ActiveRecord::Base

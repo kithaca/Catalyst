@@ -20,7 +20,9 @@ var SignupModal = React.createClass({
     getContent: function (modalName) {
       return (
         <div className="container">
-          <Signup toggleLogin={this.props.toggleLogin} closeModal={this.toggleDialog(modalName)}></Signup>
+          <Signup toggleLogin={this.props.toggleLogin}
+                   closeModal={this.toggleDialog(modalName)}>
+          </Signup>
       </div>);
     },
 

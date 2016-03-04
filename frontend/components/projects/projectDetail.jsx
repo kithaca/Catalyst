@@ -43,7 +43,17 @@ var ProjectDetail = React.createClass({
       this.state.project.image_url = "http://res.cloudinary.com/catalyst/image/upload/v1456946867/zs20ledwnp3ou2vpocp7.jpg";
     }
 
-    var date = Date.now();
+    var currDate = Date.now();
+    var deadline = new Date(this.state.project.deadline);
+    var diff = deadline - currDate;
+    var closed = false;
+    var daysLeft;
+
+    if (diff < 0) {
+      closed = true;
+    } else {
+      var daysLeft = Math.round(diff / 1000 / 60 / 60 / 24);
+    }
 
     return(
       <div className="project-detail">
@@ -66,17 +76,19 @@ var ProjectDetail = React.createClass({
         </div>
 
         <div className="sidebar">
-          <h3>{this.state.project.total_backers} catalysts</h3>
+          <h3>{this.state.project.total_backers} pledges</h3>
           <h3>${this.state.project.pledged} pledged</h3>
-          <h3>Goal: ${this.state.project.goal_amt}</h3>
-          <h3>{this.state.deadline - date} Days Left</h3>
+          <h3>${this.state.project.goal_amt} goal</h3>
+          <h3>{daysLeft} days left</h3>
 
           <button
             onClick={this.catalyzeModal}
             className="button">
             Catalyze
           </button>
-          <CatalyzeModal project={this.state.project}/>
+          <CatalyzeModal
+            project={this.state.project}>
+          </CatalyzeModal>
 
         </div>
 

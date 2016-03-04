@@ -126,8 +126,20 @@ var ApiUtil = {
     });
   },
 
-  createProjectBacking: function () {
-    
+  createProjectBacking: function (project_backing, callback) {
+    $.ajax({
+      url: 'api/project_backings',
+      method: 'POST',
+      data: project_backing,
+      error: function (req) {
+        console.log("new project backing not added");
+      },
+      success: function (data) {
+        ApiActions.receiveOneProject(data);
+        callback();
+        console.log("new project backing added and project updated");
+      }
+    });
   }
 };
 
