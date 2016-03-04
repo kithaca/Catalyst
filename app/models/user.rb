@@ -63,4 +63,58 @@ class User < ActiveRecord::Base
     self.session_token ||= SecureRandom.urlsafe_base64
   end
 
+  def unique_created_projects
+    unique_ids = []
+    proj_ids = []
+    unique_projects = []
+
+    self.created_projects.each do |project|
+      proj_ids << project.id
+    end
+
+    proj_ids.each do |id|
+      if !unique_ids.include?(id)
+        unique_ids << id
+      end
+    end
+
+    unique_ids.each do |id|
+      self.created_projects.each do |project|
+        if id == project.id
+          unique_projects << project
+          break
+        end
+      end
+    end
+
+    unique_projects
+  end
+
+  def unique_backed_projects
+    unique_ids = []
+    proj_ids = []
+    unique_projects = []
+
+    self.backed_projects.each do |project|
+      proj_ids << project.id
+    end
+
+    proj_ids.each do |id|
+      if !unique_ids.include?(id)
+        unique_ids << id
+      end
+    end
+
+    unique_ids.each do |id|
+      self.backed_projects.each do |project|
+        if id == project.id
+          unique_projects << project
+          break
+        end
+      end
+    end
+
+    unique_projects
+  end
+
 end

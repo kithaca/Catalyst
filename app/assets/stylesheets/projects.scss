@@ -11,6 +11,22 @@
   height: 500px !important;
 }
 
+.slide-text {
+  position: absolute;
+  left: 6%;
+  top: 35%;
+}
+
+.slide-header {
+  font-size: 50px;
+  left: 5%;
+
+}
+
+.slide-subtitle {
+  font-size: 30px;
+}
+
 .slider-decorator-1 * {
   color: gainsboro;
   border: none;

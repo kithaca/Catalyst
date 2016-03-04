@@ -15,14 +15,16 @@ var Category = React.createClass({
   render: function () {
     return (
       <div className="category"
-                  id={this.props.info[0]}
+                  id={this.props.info}
              onClick={this.searchByCategory}>
-        <h3 className="category-name">{this.props.info[0]}</h3>
+        <h3 className="category-name">{this.props.info}</h3>
         <br />
-        <h3 className="category-info">{this.props.info[1]} projects</h3>
       </div>
     );
   }
 });
 
 module.exports = Category;
+
+
+//<h3 className="category-info">{this.props.info[1]} projects</h3>

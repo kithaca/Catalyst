@@ -10,7 +10,12 @@ var ProjectCarousel = React.createClass({
         decorators={Decorators}
         className="carousel"
         >
-        <div className="slide1"/>
+        <div className="slide1">
+          <div className="slide-text">
+            <h1 className="slide-header">Welcome to Catalyst!</h1>
+            <h3 className="slide-subtitle">Discover, fund, and create research projects</h3>
+          </div>
+        </div>
 
         <div
           src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide2"/>

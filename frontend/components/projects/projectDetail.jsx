@@ -55,12 +55,18 @@ var ProjectDetail = React.createClass({
       var daysLeft = Math.round(diff / 1000 / 60 / 60 / 24);
     }
 
+    var ownProject =  false;
+    if (SessionStore.currentUser().username && SessionStore.currentUser().username === this.state.project.creator) {
+      ownProject = true;
+      // debugger;
+    }
+
     return(
       <div className="project-detail">
 
         <div className="project-header">
           <h1>{this.state.project.title}: {this.state.project.tagline}</h1>
-          <h3>Creator: {this.state.project.creator}</h3>
+          <h3>{ownProject ? "You are the creator of this project." : "Creator: " + this.state.project.creator}</h3>
         </div>
 
         <div className="project-display">
@@ -79,16 +85,28 @@ var ProjectDetail = React.createClass({
           <h3>{this.state.project.total_backers} pledges</h3>
           <h3>${this.state.project.pledged} pledged</h3>
           <h3>${this.state.project.goal_amt} goal</h3>
-          <h3>{daysLeft} days left</h3>
+          <h3>{closed ? "This project is closed." : daysLeft + " days left"}</h3>
 
-          <button
-            onClick={this.catalyzeModal}
-            className="button">
-            Catalyze
-          </button>
-          <CatalyzeModal
-            project={this.state.project}>
-          </CatalyzeModal>
+          {!(ownProject || closed) ? (
+            <div>
+              <button
+                onClick={this.catalyzeModal}
+                className="button">
+                Catalyze
+              </button>
+              <CatalyzeModal
+                project={this.state.project}>
+              </CatalyzeModal>
+            </div>)
+
+          : (
+            <div>
+              <button
+                onClick={this.catalyzeModal}
+                className="button" disabled>
+                Catalyze
+              </button>
+            </div>) }
 
         </div>
 
