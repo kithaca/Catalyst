@@ -35,12 +35,13 @@ end
 end
 
 1.upto(10) do
+  sample_user = User.all.sample
   new_project =
     Project.create(
-          title: titles.sample, creator_id: (User.all).sample.id, category: categories.sample,
-          tagline: taglines.sample, description: descriptions.sample,
-          goal_amt: goal_amts.sample, start_date: start_dates.sample,
-          deadline: deadlines.sample )
+          title: titles.sample, creator_id: sample_user.id, creator: sample_user.username,
+          category: categories.sample, tagline: taglines.sample,
+          description: descriptions.sample, goal_amt: goal_amts.sample,
+          start_date: start_dates.sample, deadline: deadlines.sample )
 
   new_project.save!
 

@@ -19,7 +19,7 @@
 class Project < ActiveRecord::Base
 
   validates :creator_id, :title, :category, :tagline, :description,
-    :goal_amt, :start_date, :deadline, presence: true
+    :goal_amt, :start_date, :deadline, :creator, presence: true
 
   belongs_to :creator,
     foreign_key: :creator_id,
