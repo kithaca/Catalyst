@@ -27,6 +27,7 @@
     "boron": "^0.2.3",
     "flux": "^2.1.1",
     "history": "^1.17.0",
+    "nuka-carousel": "^1.0.2",
     "rc-menu": "^4.10.3",
     "rc-tooltip": "^3.3.2",
     "react": "^0.14.7",
