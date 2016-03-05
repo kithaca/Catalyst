@@ -1050,3 +1050,4 @@ LINE 1: ...CT "projects".* FROM "projects" WHERE (category = Chemistry)
 [2016-03-04 12:16:30 -0800 AAStudent dp 1 (#11) (2780)] INFO : Doing deferred dependency-detection before Rack startup
 [2016-03-04 12:16:34 -0800 AAStudent dp 1 (#11) (2780)] ERROR : Invalid license key, please contact support@newrelic.com
 [2016-03-04 12:16:34 -0800 AAStudent dp 1 (#11) (2780)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[2016-03-04 14:34:56 -0800 AAStudent dp 1 (#11) (2780)] INFO : Starting Agent shutdown
