@@ -95,7 +95,6 @@ var NewProjectForm = React.createClass({
     e.preventDefault();
     var callback = function (error, results) {
       if(!error) {
-        debugger;
         this.setState({ image_url: results[0].url });
       }
     }.bind(this);
@@ -199,6 +198,8 @@ var NewProjectForm = React.createClass({
                 <p className="error">{this.errors.description ? "Description " + this.errors.description : ""}</p>
               </div>
 
+              {this.state.image_url === "" ? <p></p> : <img src={this.state.image_url} className="preview" />}
+
               <div>
                 <button className="button" id="upload" onClick={this.setImageUrl}>
                   Upload Photo
@@ -207,7 +208,7 @@ var NewProjectForm = React.createClass({
               </div>
               <br />
               <button onClick={loggedIn ? this.createProject : this.renderLogin}
-                    className="button">Create Project</button>
+                    className="button" id="create">Create Project</button>
 
             </div>
           </div>
