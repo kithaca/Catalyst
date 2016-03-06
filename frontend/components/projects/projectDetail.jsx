@@ -52,13 +52,17 @@ var ProjectDetail = React.createClass({
     if (diff < 0) {
       closed = true;
     } else {
-      var daysLeft = Math.round(diff / 1000 / 60 / 60 / 24);
+      var daysLeft = Math.ceil(diff / 1000 / 60 / 60 / 24);
     }
 
     var ownProject =  false;
     if (SessionStore.currentUser().username && SessionStore.currentUser().username === this.state.project.creator) {
       ownProject = true;
-      // debugger;
+    }
+
+    var fulfilled = false;
+    if (this.state.project.pledged >= this.state.project.goal_amt) {
+      fulfilled = true;
     }
 
     return(
@@ -82,17 +86,17 @@ var ProjectDetail = React.createClass({
         </div>
 
         <div className="sidebar">
-          <h3>{this.state.project.total_backers} pledges</h3>
           <h3>${this.state.project.pledged} pledged</h3>
           <h3>${this.state.project.goal_amt} goal</h3>
-          <h3>{closed ? "This project is closed." : daysLeft + " days left"}</h3>
+          <h3>{closed ? "This project is closed." : daysLeft + " day(s) left"}</h3>
+          <h3>{fulfilled ? "This project has fulfilled its funding goal!" : ""}</h3>
 
           {!(ownProject || closed) ? (
             <div>
               <button
                 onClick={this.catalyzeModal}
                 className="button">
-                Catalyze
+                Catalyze this project
               </button>
               <CatalyzeModal
                 project={this.state.project}>
@@ -104,7 +108,7 @@ var ProjectDetail = React.createClass({
               <button
                 onClick={this.catalyzeModal}
                 className="button" disabled>
-                Catalyze
+                Catalyze this project
               </button>
             </div>) }
 

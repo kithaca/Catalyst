@@ -36,9 +36,8 @@
 .sidebar {
   float: left;
   padding-top: 0px;
-  margin-right: 50px;
-  margin-left: 10%;
-  font-size: 30px;
+  margin-left: 2%;
+  font-size: 24px;
 }
 
 .sidebar > h3 {
@@ -47,18 +46,18 @@
 }
 
 .button {
-  font-size: 33px;
-  position: relative;
-  background-color: teal;
-  color: white;
-  padding: 15px 30px;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
   text-align: center;
   text-decoration: none;
-  border-radius: 5px;
-  border: 3px solid teal;
-  transition-duration: 0.3s;
-  overflow: hidden;
-  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: teal;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
 
 .button:hover {
@@ -66,27 +65,47 @@
   color: teal;
 }
 
-.button:after {
-    content: "";
-    background: teal;
-    display: block;
-    position: absolute;
-    padding-top: 300%;
-    padding-left: 350%;
-    margin-left: -30px !important;
-    margin-top: -120%;
-    opacity: 0;
-    transition: all 0.8s;
-}
+// .button:after {
+//   content: "";
+//   background: teal;
+//   // display: block;
+//   position: absolute;
+//   padding-top: 300%;
+//   padding-left: 350%;
+//   margin-left: -30px !important;
+//   margin-top: -120%;
+//   opacity: 0;
+//   transition: all 0.8s;
+// }
 
-.button:active:after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transition: 0s
+.button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .error {
   color: lightcoral;
   font-weight: normal;
+}
+
+.catalyze-header {
+  font-size: 24px;
+  margin: 0px;
+
+}
+
+.catalyze {
+  padding: 20px;
+}
+
+.catalyze-input {
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.catalyze-button {
+  font-size: 18px;
+  display: block;
+  margin: 0 auto;
 }

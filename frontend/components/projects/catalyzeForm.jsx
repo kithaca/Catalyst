@@ -13,7 +13,6 @@ var CatalyzeForm = React.createClass({
   },
 
   updateProject: function (e) {
-    // debugger;
     e.preventDefault();
     var projectBacking = {
       backer_username: SessionStore.currentUser().username,
@@ -25,6 +24,8 @@ var CatalyzeForm = React.createClass({
     if (projectBacking.pledge_amt !== "" && projectBacking.pledge_amt > 0) {
       ApiUtil.createProjectBacking({project_backing: projectBacking}, function () {
         EventEmitter.dispatch("TOGGLE_CATALYZE");
+        // may need to refactor this as reload shouldn't be necessary
+        window.location.reload();
       });
     }
     // ApiUtil.updateUser
@@ -33,15 +34,14 @@ var CatalyzeForm = React.createClass({
   render: function () {
     return(
       <div>
-        <h2 className="modal-header">Catalyze this project!</h2>
         <form className="catalyze" onSubmit={this.updateProject}>
-          $ <input className="form-input"
+        <h2 className="catalyze-header">Catalyze this project!</h2>
+          $ <input className="form-input catalyze-input"
             type="text"
             placeholder="Contribution amount"
             valueLink={this.linkState("pledge_amt")}
             />
-
-          <button className="button">
+          <button className="button catalyze-button">
             Contribute
           </button>
 

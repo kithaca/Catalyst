@@ -21,10 +21,10 @@ class Project < ActiveRecord::Base
   validates :creator_id, :title, :category, :tagline, :description,
     :goal_amt, :start_date, :deadline, :creator, presence: true
 
-  belongs_to :creator,
-    foreign_key: :creator_id,
-    primary_key: :id,
-    class_name: User
+  # belongs_to :creator,
+  #   foreign_key: :creator_id,
+  #   primary_key: :id,
+  #   class_name: User
 
   has_many :backings,
     foreign_key: :project_id,

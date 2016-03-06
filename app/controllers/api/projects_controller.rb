@@ -16,7 +16,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.includes(:creator)
+    @projects = Project.all
 
     if params[:query]
       @projects = Project.filter(params[:query])
@@ -28,7 +28,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def show
-    @project = Project.includes(:creator, :backers, :backings).find(params[:id])
+    @project = Project.includes(:backers, :backings).find(params[:id])
   end
 
   def update
