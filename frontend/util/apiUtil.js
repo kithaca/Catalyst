@@ -112,7 +112,7 @@ var ApiUtil = {
     });
   },
 
-  fetchProjectsByCategory: function (category, callback) {
+  fetchProjectsByCategory: function (category) {
     $.ajax({
       url: 'api/projects',
       method: 'GET',
@@ -120,7 +120,6 @@ var ApiUtil = {
       error: function () {
       },
       success: function (data) {
-        callback();
         ApiActions.receiveAllProjects(data);
       }
     });

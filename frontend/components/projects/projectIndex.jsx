@@ -13,7 +13,11 @@ var ProjectIndex = React.createClass({
   componentDidMount: function () {
     this.projectListener = ProjectStore.addListener(this._onChange);
     // ApiUtil.fetchAllProjects();
-    ApiUtil.fetchSearchedProjects(this.props.location.query.query);
+    if (this.props.location.query.query === "category") {
+      // do nothing
+    } else {
+      ApiUtil.fetchSearchedProjects(this.props.location.query.query);
+    }
   },
 
   _onChange: function () {
