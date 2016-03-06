@@ -17,8 +17,8 @@ var Searchbar = React.createClass({
     var query = this.state.query;
     var that = this;
     if (query.length > 0) {
-      ApiUtil.fetchSearchedProjects(query);
       that.history.pushState(null, "/", {query: query});
+      ApiUtil.fetchSearchedProjects(query);
     }
 
   },
