@@ -3,12 +3,14 @@ var ProjectStore = require('../../stores/projectStore');
 var ApiUtil = require('../../util/apiUtil');
 var History = require('react-router').History;
 var Category = require('./category');
+var Loader = require('react-loader');
 
 var CategoryIndex = React.createClass({
 
-  // getInitialState: function () {
-  //   return { categories: ProjectStore.categories() };
-  // },
+  getInitialState: function () {
+    // return { categories: ProjectStore.categories() };
+    return { loaded: true };
+  },
 
   // componentDidMount: function () {
   //   this.projectListener = ProjectStore.addListener(this._onChange);
@@ -32,15 +34,14 @@ var CategoryIndex = React.createClass({
     var that = this;
     return (
       <div>
-
-      <div className="category-list group">
-        {categories.map(function (category) {
-          // var categoryProps = [category, that.state.categories[category]];
-          return (
-            <Category info={category} />
-          );
-        })}
-      </div>
+        <Loader loaded={this.state.loaded} className="loader" />
+        <div className="category-list group">
+          {categories.map(function (category) {
+            return (
+              <Category info={category} />
+            );
+          })}
+        </div>
     </div>
     );
   }

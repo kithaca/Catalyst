@@ -5,7 +5,7 @@ var ApiUtil = require('../util/apiUtil');
 var Login = require('./session/login');
 var Navbar = require('./nav/navbar');
 var ProjectIndex = require('./projects/projectIndex');
-
+var Loader = require('react-loader');
 
 var App = React.createClass({
 
@@ -14,7 +14,7 @@ var App = React.createClass({
   getInitialState: function () {
     var currentUser = SessionStore.currentUser();
     return { currentUser: currentUser, loggedIn: (Object.keys(currentUser) > 0),
-      showLoginForm: false };
+      showLoginForm: false, loaded: false };
   },
 
   componentDidMount: function () {
@@ -23,7 +23,7 @@ var App = React.createClass({
   },
 
   _userChange: function () {
-    this.setState({ currentUser: SessionStore.currentUser() });
+    this.setState({ currentUser: SessionStore.currentUser(), loaded: true });
     if (Object.keys(SessionStore.currentUser()).length > 0) {
       this.setState({ loggedIn: true });
     } else {
@@ -59,6 +59,8 @@ var App = React.createClass({
   render: function () {
     return(
       <div className="app">
+      <Loader loaded={this.state.loaded} className="loader" />
+
         <Navbar showLogin={this.showLogin}
               toggleLogin={this.toggleLogin}
                  loggedIn={this.loggedIn}
