@@ -14,6 +14,18 @@ var Navbar = React.createClass({
     window.location = "/";
   },
 
+  goToCategories: function () {
+    this.history.pushState(null, "categories", {});
+  },
+
+  goToNewProject: function () {
+    this.history.pushState(null, "new-project", {});
+  },
+
+  goToProfile: function () {
+    this.history.pushState(null, "profile", {});
+  },
+
   render: function () {
     var showLogin = "hidden";
     if (this.props.showLogin()) {
@@ -25,13 +37,15 @@ var Navbar = React.createClass({
     var loggedIn = false;
     var profile;
     if (this.props.loggedIn()) {
-      logInOrOut = <div onClick={this.props.logOut}>Log Out</div>;
+      logInOrOut = <li className="nav-item" id="nav-right" onClick={this.props.logOut}>Log Out</li>;
       loggedIn = true;
-      profile = <Link to="profile">Profile</Link>;
+      profile = <li className="nav-item" id="nav-right" onClick={this.goToProfile}>Profile</li>;
     } else {
-      logInOrOut = <LoginModal
-                   toggleLogin={this.props.toggleLogin}/>;
-          signUp = <SignupModal />;
+      logInOrOut =
+      <li className="nav-item" id="nav-right">
+        <LoginModal toggleLogin={this.props.toggleLogin}>Log In</LoginModal>
+      </li>;
+      signUp = <li className="nav-item" id="nav-right"><SignupModal /></li>;
     }
 
     var displayProfile = loggedIn ? true : false;
@@ -39,24 +53,24 @@ var Navbar = React.createClass({
     return(
       <div className="header group">
         <ul className="nav">
-          <div onClick={this.goHome} className="nav-item" id="logo">
+          <li onClick={this.goHome} className="nav-item" id="logo">
             Catalyst
-          </div>
+          </li>
 
-          <Link to="categories" className="nav-item">
+          <li onClick={this.goToCategories} className="nav-item">
             Categories
-          </Link>
+          </li>
 
-          <Link to="new-project" className="nav-item">
+          <li onClick={this.goToNewProject} className="nav-item">
             New Project
-          </Link>
+          </li>
 
           <Searchbar />
 
-          {displaySignUp ? <li className="nav-item auth">{signUp}</li> : <p></p>}
-          {displayProfile ? <li className="nav-item auth" id="profile">{profile}</li> : <p></p>}
+          {displaySignUp ? signUp : null}
+          {displayProfile ? profile : null}
 
-          <li className="nav-item auth">{logInOrOut}</li>
+          {logInOrOut}
         </ul>
       </div>
     );

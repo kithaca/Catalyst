@@ -21,8 +21,12 @@ var LoginModal = React.createClass({
   getContent: function (modalName) {
     return (
       <div className="container">
-        <Login toggleLogin={this.props.toggleLogin} closeModal={this.toggleDialog(modalName)}></Login>
-    </div>);
+        <Login
+          toggleLogin={this.props.toggleLogin}
+          closeModal={this.toggleDialog(modalName)}>
+        </Login>
+      </div>
+        );
   },
 
   getTriggerAndModal: function(modalName){
@@ -30,21 +34,19 @@ var LoginModal = React.createClass({
 
     return (
       <div>
-      <button
-        onClick={this.toggleDialog(modalName)}
-             id="btn">
-        <h3>Log In</h3>
-      </button>
-
-      <Modal ref={modalName}>{this.getContent(modalName)}</Modal>
-      </div>
+        <button
+          onClick={this.toggleDialog(modalName)}
+               id="btn">Log In
+        </button>
+        <Modal ref={modalName}>{this.getContent(modalName)}</Modal>
+    </div>
     );
   },
 
   render: function() {
     var that = this;
     return (
-        <div className="container">
+        <div>
           {that.getTriggerAndModal('OutlineModal')}
         </div>
     );

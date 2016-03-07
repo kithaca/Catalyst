@@ -31,20 +31,19 @@ var SignupModal = React.createClass({
 
         return (
           <div>
-          <button
-            onClick={this.toggleDialog(modalName)}
-                 id="btn">
-            <h3>Create Account</h3>
-          </button>
-
-          <Modal ref={modalName}>{this.getContent(modalName)}</Modal>
+            <button
+              onClick={this.toggleDialog(modalName)}
+                   id="btn">
+              Create Account
+            </button>
+            <Modal ref={modalName}>{this.getContent(modalName)}</Modal>
           </div>
         );
     },
     render: function() {
         var that = this;
         return (
-            <div className="container">
+            <div>
               {that.getTriggerAndModal('OutlineModal')}
             </div>
         );

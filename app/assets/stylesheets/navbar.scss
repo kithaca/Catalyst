@@ -1,13 +1,11 @@
 .header {
   background: black;
   opacity: .7;
-  margin-top: -16px;
+  margin-top: -10px;
+  line-height: 32px;
   z-index: 2;
   width: 100%;
   position: fixed;
-
-  /*padding: inherit;*/
-  /*margin: inherit;*/
 }
 
 .header:hover {
@@ -15,11 +13,7 @@
 }
 
 .nav {
-  text-align: center;
-  line-height: 40px;
-  display: inline;
-  padding: 0;
-  margin: 0;
+  margin-top: -3px;
 }
 
 .nav-item {
@@ -27,29 +21,15 @@
   color: white;
   text-decoration: none;
   display: block;
-  padding-left: 20px;
+  // padding-left: 20px;
   float: left;
   background: black;
   padding: 0px 20px;
-  // padding-bottom: 30px;
-  margin-top: 30px;
-  cursor: pointer;
-}
-
-.nav-item a {
-  color: white;
-  text-decoration: none;
-  font-weight: 300;
-}
-
-.auth {
-  float: right;
-  // margin-right: 20px;
   cursor: pointer;
 
-}
-
-.nav-item, .auth, .nav-item a {
+  margin-top: 13px;
+  padding-top: 17px;
+  padding-bottom: 17px;
   transition-duration: 0.3s;
 }
 
@@ -63,9 +43,13 @@
   color: black;
 }
 
-.auth:hover {
-  background-color: white;
+#nav-right {
+  float: right;
 }
+
+// .auth:hover {
+//   background-color: white;
+// }
 
 .search-form {
   margin: 0;
@@ -96,26 +80,23 @@
   margin: 0;
   padding: 0;
   float: left;
-  margin-top: 27px;
+  margin-top: 30px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
 #btn {
   outline: none;
-  font-size: 17px;
-  font-weight: 300;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: inherit;
+  font-family: inherit;
   line-height: 0px;
-  /*font-variant: small-caps;*/
-  background: teal;
-  color: white;
+  background: black;
+  color: inherit;
   border: none;
   cursor: pointer;
-}
-
-#btn:hover {
-  background-color: white;
-  color: teal;
+  margin: 0px;
+  padding: 0px;
 }
 
 .container {
