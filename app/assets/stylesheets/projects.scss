@@ -12,10 +12,21 @@
   height: 500px !important;
 }
 
-.slide-text {
+.slide-text-1 {
   position: absolute;
-  left: 6%;
-  top: 35%;
+  left: 10%;
+  top: 33%;
+}
+
+.slide-text-2 {
+  position: absolute;
+  left: 41%;
+  top: 33%;
+}
+
+.slide-text-3 {
+  padding-left: 24%;
+  padding-top: 7%;
 }
 
 .slide-header {
@@ -26,6 +37,15 @@
 
 .slide-subtitle {
   font-size: 30px;
+}
+
+.cats {
+  float: left;
+  background: none;
+  display: block;
+  margin-left: 25px;
+  font-size: 28px;
+
 }
 
 .slider-decorator-1 * {
@@ -55,15 +75,26 @@
   height: 500px !important;
 }
 
-.slide1 {
+.slide {
   height: 500px;
   background-color: black;
-  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1457042966/flowers_nhgxbw.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
-
 }
+
+.slide1 {
+  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1457042966/flowers_nhgxbw.jpg");
+}
+
+.slide2 {
+  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1457330254/chem-background-2_g6zkaq.jpg");
+}
+
+.slide3 {
+  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1457331971/dna-background_gxajwh.jpg");
+}
+
 
 .project-index {
   background-image: none;

@@ -43,12 +43,11 @@ var ProjectDetail = React.createClass({
       this.state.project.image_url = "http://res.cloudinary.com/catalyst/image/upload/v1456946867/zs20ledwnp3ou2vpocp7.jpg";
     }
 
-    var currDate = Date.now();
+    var currDate = new Date;
     var deadline = new Date(this.state.project.deadline);
     var diff = deadline - currDate;
     var closed = false;
     var daysLeft;
-
     if (diff < 0) {
       closed = true;
     } else {
