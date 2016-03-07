@@ -156,7 +156,7 @@ var NewProjectForm = React.createClass({
                 <label>
                   Funding Goal
                   <br />
-                  $<input
+                  $ <input
                     type="text"
                     className="form-input"
                     valueLink={this.linkState("goal_amt")}

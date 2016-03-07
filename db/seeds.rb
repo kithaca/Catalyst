@@ -14,6 +14,22 @@ goal_amts = []
 start_dates = []
 deadlines = []
 
+bio_image_urls = [
+
+]
+chem_image_urls = [
+
+]
+eng_image_urls = [
+
+]
+med_image_urls = [
+
+]
+phys_image_urls = {
+  
+}
+
 1.upto(10) { titles << Faker::App.name }
 1.upto(10) { taglines << Faker::Company.catch_phrase }
 1.upto(10) { descriptions << Faker::Hipster.paragraph(4)}
