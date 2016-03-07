@@ -112,11 +112,7 @@ var Signup = React.createClass({
               <button onClick={this.renderLogin}
                     className="lazy-login-btn">>>Log In</button>
             </div>
-            <br/>
-            <div className="lazy-options">
-              <h5>Just exploring?</h5>
-              <button className="lazy-login-btn">>>Guest Login</button>
-            </div>
+            
           </div>
 
       </div>

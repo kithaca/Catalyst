@@ -57,15 +57,11 @@ var CurrentUser = React.createClass({
           <div className="created-projects">
             <h2>Projects you have created:</h2>
 
-            <div>
               {created_projects}
-            </div>
 
           <div className="catalyzed-projects">
             <h2>Projects you have catalyzed:</h2>
-            <div>
               {backed_projects}
-            </div>
           </div>
 
         </div>
