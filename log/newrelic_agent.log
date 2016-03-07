@@ -1166,3 +1166,4 @@ LINE 1: ...CT "projects".* FROM "projects" WHERE (category = Chemistry)
 [2016-03-05 13:53:46 -0800 AAStudent dp 1 (#11) (1583)] INFO : Installing Rails 4 view instrumentation
 [2016-03-05 13:53:46 -0800 AAStudent dp 1 (#11) (1583)] INFO : Installing Rails 4 Error instrumentation
 [2016-03-05 13:53:46 -0800 AAStudent dp 1 (#11) (1583)] INFO : Finished instrumentation
+[2016-03-05 19:16:03 -0800 AAStudent dp 1 (#11) (1396)] INFO : Starting Agent shutdown
