@@ -26,6 +26,8 @@ categories.each do |category|
   new_cat.save!
 end
 
+defaultUser = User.create(username: "Bill Gates", email: "billgates@bill.com" password: "billgates");
+
 1.upto(10) do
   new_user = User.create(
   username: Faker::Internet.user_name, email: Faker::Internet.free_email,

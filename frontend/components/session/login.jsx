@@ -37,6 +37,18 @@ var Login = React.createClass({
     }
   },
 
+  defaultLogin: function () {
+    event.preventDefault();
+    var defaultUser = {};
+    defaultUser.username = "Bill Gates";
+    defaultUser.password = "billgates";
+    var that = this;
+    ApiUtil.login({user: defaultUser}, function () {
+      that.props.toggleLogin();
+      that.props.closeModal();
+    });
+  },
+
   logInUser: function functionName(event) {
     event.preventDefault();
     var user = {};
@@ -86,20 +98,28 @@ var Login = React.createClass({
 
               <button onClick={this.logInUser} className="auth-button">Log In</button>
 
+            </form>
               <div className="option-container">
                 <div className="lazy-options">
                   <h5>Don't have an account?</h5>
                   <button onClick={this.renderSignup}
                         className="lazy-login-btn">>>Sign Up</button>
                 </div>
+
                 <br/>
+
                 <div className="lazy-options">
+
                   <h5>Just exploring?</h5>
-                  <button className="lazy-login-btn">>>Guest Login</button>
+
+                  <button onClick={this.defaultLogin}
+                        className="lazy-login-btn">
+                        >>Guest Login
+                  </button>
                 </div>
+
               </div>
 
-            </form>
           </div>
       </div>
 
