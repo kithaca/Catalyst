@@ -121,23 +121,25 @@
   border: 1px solid midnightblue;
   // box-shadow: 5px 5px 9px midnightblue;
   margin: 20px;
+  margin-bottom: 60px;
   overflow: hidden;
   border-radius: 10px;
   width: 100%;
   max-width: 300px;
   flex-basis: 200px;
   min-width: 100px;
-  min-height: 600px;
+  min-height: 592px;
   color: darkcyan;
   flex: none;
   background-image: none;
 }
 
 .proj-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   padding: 5px 10px;
   display: block;
+  margin-bottom: 10px;
 }
 
 .proj-category {
@@ -158,12 +160,14 @@
   margin: 0px 10px;
   font-size: 14px;
   font-weight: normal;
+  font-style: italic;
 }
 
 .proj-descr {
   margin: 10px;
   font-size: 14px;
   font-weight: normal;
+  text-overflow: ellipsis;
 }
 
 .proj-goal {
