@@ -5,7 +5,11 @@ var ApiUtil = require('../../util/apiUtil');
 var ProjectIndexItem = require('./projectIndexItem');
 var ProjectCarousel = require('./carousel');
 
+// var NukaDecorate = require('nuka-carousel-autoscroll').NukaDecorate;
+// var NukaDecorated = NukaDecorate({duration: 100})(ProjectCarousel);
+
 var ProjectIndex = React.createClass({
+
   getInitialState: function () {
     return { projects: ProjectStore.all() };
   },
@@ -46,13 +50,13 @@ var ProjectIndex = React.createClass({
 
 
   render: function () {
-
     var projectsArray = [];
     var that = this;
     Object.keys(that.state.projects).forEach(function (key) {
       projectsArray.push(that.state.projects[key]);
     });
     projectsArray = this.shuffle(projectsArray);
+
     return(
       <div>
         <ProjectCarousel />

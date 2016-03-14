@@ -2,7 +2,6 @@ var React = require('react');
 var Carousel = require('nuka-carousel');
 
 var ProjectCarousel = React.createClass({
-  mixins: [Carousel.ControllerMixin],
 
   // slidesToScroll: React.PropTypes.oneOfType([
   //   React.PropTypes.number,

@@ -5,7 +5,6 @@ var ApiUtil = require('../util/apiUtil');
 var Login = require('./session/login');
 var Navbar = require('./nav/navbar');
 var ProjectIndex = require('./projects/projectIndex');
-var Loader = require('react-loader');
 
 var App = React.createClass({
 
@@ -76,7 +75,6 @@ var App = React.createClass({
   render: function () {
     return(
       <div className="app">
-      <Loader loaded={this.state.loaded} className="loader" />
 
         <Navbar showLogin={this.showLogin}
               toggleLogin={this.toggleLogin}
