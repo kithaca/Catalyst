@@ -33,7 +33,7 @@ var Searchbar = React.createClass({
           	<input className="form-input"
                         id="search"
                       type="text"
-               placeholder="Search projects"
+               placeholder="Search titles, categories, descriptions, etc."
                  valueLink={this.linkState("query")} />
       </form>
     );

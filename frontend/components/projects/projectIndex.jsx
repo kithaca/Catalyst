@@ -12,11 +12,16 @@ var ProjectIndex = React.createClass({
 
   componentDidMount: function () {
     this.projectListener = ProjectStore.addListener(this._onChange);
-    // ApiUtil.fetchAllProjects();
     if (this.props.location.query.query === "category") {
       // do nothing
     } else {
       ApiUtil.fetchSearchedProjects(this.props.location.query.query);
+    }
+
+
+    if (this.props.location.query.query) {
+      window.scrollY = 520;
+      window.scroll(scrollX, scrollY);
     }
   },
 
@@ -39,12 +44,8 @@ var ProjectIndex = React.createClass({
    return arr;
   },
 
+
   render: function () {
-    this.state.projects.forEach(function (project) {
-      if (project.image_url === null) {
-        project.image_url = "http://res.cloudinary.com/catalyst/image/upload/v1456946867/zs20ledwnp3ou2vpocp7.jpg";
-      }
-    });
 
     var projectsArray = [];
     var that = this;
@@ -52,14 +53,14 @@ var ProjectIndex = React.createClass({
       projectsArray.push(that.state.projects[key]);
     });
     projectsArray = this.shuffle(projectsArray);
-
     return(
       <div>
         <ProjectCarousel />
         <div className="project-index group">
         <ul>
           {projectsArray.map(function (project) {
-            return (<ProjectIndexItem key={project.id} project={project} />);
+            return (<ProjectIndexItem key={project.id}
+                                      project={project} />);
           })}
         </ul>
       </div>

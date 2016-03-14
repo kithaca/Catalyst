@@ -35,6 +35,23 @@ var App = React.createClass({
     this.currentUserListener.remove();
   },
 
+  componentDidUpdate() {
+    var panel;
+    var node;
+    if (this.refs.selectedSection && this.refs.selectedItem) {
+      // This is the container you want to scroll.
+      panel = this.refs.listPanel;
+      // This is the element you want to make visible w/i the container
+      // Note: You can nest refs here if you want an item w/i the selected item
+      node = ReactDOM.findDOMNode(this.refs.selectedItem);
+    }
+
+    if (panel && node &&
+      (node.offsetTop > panel.scrollTop + panel.offsetHeight || node.offsetTop < panel.scrollTop)) {
+      panel.scrollTop = node.offsetTop - panel.offsetTop;
+    }
+  },
+
   showLogin: function () {
     return this.state.showLoginForm;
   },
