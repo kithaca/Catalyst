@@ -3,7 +3,6 @@ var ProjectStore = require('../../stores/projectStore');
 var ApiUtil = require('../../util/apiUtil');
 var History = require('react-router').History;
 var Category = require('./category');
-var Loader = require('react-loader');
 
 var CategoryIndex = React.createClass({
 
@@ -34,7 +33,6 @@ var CategoryIndex = React.createClass({
     var that = this;
     return (
       <div>
-        <Loader loaded={this.state.loaded} className="loader" />
         <div className="category-list group">
           {categories.map(function (category) {
             return (
