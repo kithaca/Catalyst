@@ -47,9 +47,14 @@
   float: right;
 }
 
-// .auth:hover {
-//   background-color: white;
-// }
+.profile-pic {
+  background-image: url("http://res.cloudinary.com/catalyst/image/upload/v1457924130/profile-icon_nibphw.png");
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
 
 .search-form {
   margin: 0;

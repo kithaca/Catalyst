@@ -4,7 +4,7 @@ var Link = require('react-router').Link;
 var Login = require('../session/login');
 var LoginModal = require('../session/loginModal');
 var SignupModal = require('../session/signupModal');
-var Searchbar = require ('./searchbar');
+var Searchbar = require('./searchbar');
 
 var Navbar = React.createClass({
 
@@ -39,7 +39,10 @@ var Navbar = React.createClass({
     if (this.props.loggedIn()) {
       logInOrOut = <li className="nav-item" id="nav-right" onClick={this.props.logOut}>Log Out</li>;
       loggedIn = true;
-      profile = <li className="nav-item" id="nav-right" onClick={this.goToProfile}>Profile</li>;
+      profile =
+        <li className="nav-item" id="nav-right" onClick={this.goToProfile}>
+          <div className="profile-pic"></div>
+        </li>;
     } else {
       logInOrOut =
       <li className="nav-item" id="nav-right">

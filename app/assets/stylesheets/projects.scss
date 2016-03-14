@@ -99,10 +99,12 @@
 .project-index {
   background-image: none;
   position: relative;
-  width: 60%;
+  width: 100%;
   display: block;
   margin: 0 auto;
   padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
   // max-width: 1200px;
   // justify-content: center;
 }
