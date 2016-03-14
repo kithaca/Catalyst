@@ -7,27 +7,10 @@ var Category = require('./category');
 var CategoryIndex = React.createClass({
 
   getInitialState: function () {
-    // return { categories: ProjectStore.categories() };
     return { loaded: true };
   },
 
-  // componentDidMount: function () {
-  //   this.projectListener = ProjectStore.addListener(this._onChange);
-  //   ApiUtil.fetchAllProjects();
-  // },
-
-  // _onChange: function () {
-  //   this.setState({ categories: ProjectStore.categories() });
-  // },
-  //
-  // componentWillUnmount: function () {
-  //   this.projectListener.remove();
-  // },
-
   render: function () {
-    // if (Object.keys(this.state.categories).length === 0) {
-    //   return <div>Categories could not be loaded. :(</div>;
-    // }
 
     var categories = ["Biology", "Chemistry", "Engineering", "Medicine", "Physics"];
     var that = this;

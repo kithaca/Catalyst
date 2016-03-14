@@ -3,15 +3,6 @@ var Carousel = require('nuka-carousel');
 
 var ProjectCarousel = React.createClass({
 
-  // slidesToScroll: React.PropTypes.oneOfType([
-  //   React.PropTypes.number,
-  //   React.PropTypes.oneOf(['auto'])
-  // ]),
-  //
-  // speed: React.PropTypes.number(
-  //   200
-  // ),
-
   render: function () {
     return (
       <Carousel
@@ -78,22 +69,5 @@ var Decorators = [{
   }),
   position: 'CenterRight'
 }];
-
-// var RightButton = [{
-//   component: React.createClass({
-//     render: function () {
-//       return (
-//         <button
-//           onClick={this.props.nextSlide}>
-//           Previous Slide
-//         </button>
-//       );
-//     }
-//   }),
-//   position: 'CenterLeft',
-//   style: {
-//     padding: 20
-//   }
-// }];
 
 module.exports = ProjectCarousel;

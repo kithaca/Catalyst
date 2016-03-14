@@ -5,9 +5,6 @@ var ApiUtil = require('../../util/apiUtil');
 var ProjectIndexItem = require('./projectIndexItem');
 var ProjectCarousel = require('./carousel');
 
-// var NukaDecorate = require('nuka-carousel-autoscroll').NukaDecorate;
-// var NukaDecorated = NukaDecorate({duration: 100})(ProjectCarousel);
-
 var ProjectIndex = React.createClass({
 
   getInitialState: function () {

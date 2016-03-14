@@ -24,11 +24,8 @@ var CatalyzeForm = React.createClass({
     if (projectBacking.pledge_amt !== "" && projectBacking.pledge_amt > 0) {
       ApiUtil.createProjectBacking({project_backing: projectBacking}, function () {
         EventEmitter.dispatch("TOGGLE_CATALYZE");
-        // may need to refactor this as reload shouldn't be necessary
-        // window.location.reload();
       });
     }
-    // ApiUtil.updateUser
   },
 
   render: function () {
