@@ -3,20 +3,23 @@
 [Link to live website][link]
 [link]: http://www.catalyze.tech
 
-## Minimum Viable Product
+## Description
 
-Catalyst is a web app inspired by KickStarter, built using Ruby on Rails and React.js. Catalyst is a platform where users can view, share, and fund science research projects. Catalyst allows users to:
+Catalyst is a web app inspired by KickStarter and built using Ruby on Rails and React.js. Catalyst is a platform where users can view, share, and fund science research projects. Catalyst allows users to:
 
-<!-- This is a Markdown checklist. Use it to keep track of your
-progress. Put an x between the brackets for a checkmark: [x] -->
+* Create an account
+* Log in / Log out
+* Explore projects by category
+* Search projects
+* Fund projects
+* Create new research projects
 
-- [ ] Create an account
-- [ ] Log in / Log out
-- [ ] Explore by projects by category
-- [ ] Search projects
-- [ ] Fund projects
-- [ ] Create new research projects
-- [ ] Create updates to research projects
+## Features
+* Secure custom authentication system that hashes/salts passwords using BCrypt
+* Cloudinary API for image upload
+* Single-page sign up and login
+* Guest user login for exploration
+* Search from any page
 
 ## Design Docs
 * [View Wireframes][views]
@@ -31,72 +34,32 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 [api-endpoints]: ./docs/api-endpoints.md
 [schema]: ./docs/schema.md
 
-## Implementation Timeline
+## Screenshots
 
-### Phase 1: Backend setup and User Authentication (1 day)
+#### Homepage
+![homepage](http://res.cloudinary.com/catalyst/image/upload/v1457939512/Homepage_zmkqrb.png)
 
-**Objective:** Functioning rails project with Authentication
+#### Log In
+![login_form](http://res.cloudinary.com/catalyst/image/upload/v1457939509/logIn_ptxeh2.png)
 
-- [x] create new project
-- [x] create `User` model
-- [x] authentication
-- [x] user signup/signin pages
-- [x] blank landing page after signin
+#### Projects Index
+![project_index](http://res.cloudinary.com/catalyst/image/upload/v1457939510/projectIndex_vpemgo.png)
 
-### Phase 2: Project model, API, basic APIUtil, and Flux scaffold (2 days)
+#### Categories
+![categories](http://res.cloudinary.com/catalyst/image/upload/v1457939509/categories_ujpui6.png)
 
-**Objective:** Projects can be created, read, edited and destroyed through the API.
+#### Project Detail
+![categories](http://res.cloudinary.com/catalyst/image/upload/v1457939509/projectDetail_uutmh8.png)
 
-- [x] create `Project` model
-- [ ] create `Update` model
-- [x] seed the database with a small amount of test data
-- [ ] CRUD API for projects (`ProjectsController`, `UpdatesController`)
-- [x] jBuilder views
-- [x] set up Webpack & Flux scaffold
-- [x] set up `APIUtil` to interact with the API
-- [x] test out API interaction in the console.
+#### Profile Page
+![profile](http://res.cloudinary.com/catalyst/image/upload/v1457939509/Profile_hidxuh.png)
 
-### Phase 3: Flux Architecture and Router (2 days)
+#### Create New Project
+![new_project_form](http://res.cloudinary.com/catalyst/image/upload/v1457939510/newProjectForm_lmx14o.png)
 
-**Objective:** Projects can be created, read, edited and destroyed through the user interface. Project updates can be created.
-
-- [x] set up the flux loop with skeleton files
-- [x] set up React Router
-- implement each project component, building out the flux loop as needed.
-  - [x] `ProjectsIndex`
-  - [x] `ProjectIndexItem`
-  - [x] `NewProjectForm`
-  - [ ] `NewUpdateForm`
-
-### Phase 4: Search (1 day)
-- [ ] search should return matching results
-- [ ] create React structure for search (store)
-
-### Phase 5: Userpage customization/Styling (1 day)
-
-**Objective:** Existing pages (including signup/signin) will look good.
-
-- [x] make signup/signin appear on top of home page
-- [ ] customize individual userpage so users can view projects they have backed and created
-- [ ] polish styles
-
-### Phase 6: Styling Cleanup and Seeding (1 day)
-
-**objective:** Make the site feel more cohesive and well-used.
-
-- [ ] Get feedback on my UI from others
-- [ ] Add seed data (potentially pull from public APIs?)
-- [ ] Add modals, transitions, and other styling flourishes.
-
-### Bonus Features (TBD)
-- [ ] Detailed user profile pages (can link from project show page)
-- [ ] Pagination / infinite scroll for Projects Index
-- [ ] Reminders/notifications for project updates
-- [ ] "Rewards" for being a philanthropist
-- [ ] "Suggested" or "favorite" projects
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
+## Future Features (TBD)
+* User profile page customization (can link from project show page)
+* Pagination / infinite scroll for Projects Index
+* Reminders/notifications for project updates
+* "Rewards" for being a philanthropist
+* "Suggested" or "favorite" projects
