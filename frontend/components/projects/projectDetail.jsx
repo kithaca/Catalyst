@@ -17,6 +17,7 @@ var ProjectDetail = React.createClass({
 
   componentDidMount: function () {
     this.projectListener = ProjectStore.addListener(this._onChange);
+    EventEmitter.subscribe("TOGGLE_CATALYZE", this.forceUpdate.bind(this));
     ApiUtil.fetchOneProject(this.props.params.id);
   },
 
@@ -39,9 +40,7 @@ var ProjectDetail = React.createClass({
   render: function () {
     if (this.state.project === undefined) {
       return <div>Project does not exist :(</div>;
-    } else if (this.state.project.image_url === null) {
-      this.state.project.image_url = "http://res.cloudinary.com/catalyst/image/upload/v1456946867/zs20ledwnp3ou2vpocp7.jpg";
-    }
+    } 
 
     var currDate = new Date;
     var deadline = new Date(this.state.project.deadline);

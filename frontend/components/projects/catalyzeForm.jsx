@@ -25,7 +25,7 @@ var CatalyzeForm = React.createClass({
       ApiUtil.createProjectBacking({project_backing: projectBacking}, function () {
         EventEmitter.dispatch("TOGGLE_CATALYZE");
         // may need to refactor this as reload shouldn't be necessary
-        window.location.reload();
+        // window.location.reload();
       });
     }
     // ApiUtil.updateUser

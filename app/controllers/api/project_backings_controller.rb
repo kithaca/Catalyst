@@ -6,8 +6,8 @@ class Api::ProjectBackingsController < ApplicationController
     @project_backing = ProjectBacking.new(project_backing_params)
     @project_backing[:backer_id] = user.id
     if @project_backing.save
-      project = Project.find(@project_backing.project_id)
-      render json: project
+      @project = Project.find(@project_backing.project_id)
+      render :show
     else
       # render json: {errors: @project.errors.full_messages}
     end

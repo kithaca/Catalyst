@@ -9,7 +9,6 @@ class Api::ProjectsController < ApplicationController
     user = User.find_by_username(username)
     @project["creator_id"] = user.id
     @project["creator"] = user.username
-    # debugger;
     if @project.save
       render json: @project
     else
