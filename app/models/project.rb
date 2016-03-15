@@ -37,8 +37,6 @@ class Project < ActiveRecord::Base
 
   has_one :project_category
 
-  attr_accessor :pledged
-
   def self.filter(query_string)
     filtered_projects = Project.find_by_sql("
       SELECT projects.*
@@ -56,14 +54,6 @@ class Project < ActiveRecord::Base
     filtered_projects = Project.where("category = '#{category}'")
 
     filtered_projects
-  end
-
-  def pledged=(pledged_sum)
-    @pledged = pledged_sum
-  end
-
-  def pledged
-    @pledged
   end
 
 # TODO: need custom validation to ensure start_date is not after deadline
