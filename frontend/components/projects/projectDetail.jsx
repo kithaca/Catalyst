@@ -17,7 +17,7 @@ var ProjectDetail = React.createClass({
 
   componentDidMount: function () {
     this.projectListener = ProjectStore.addListener(this._onChange);
-    EventEmitter.subscribe("TOGGLE_CATALYZE", this.forceUpdate.bind(this));
+    // EventEmitter.subscribe("TOGGLE_CATALYZE", this.forceUpdate.bind(this));
     ApiUtil.fetchOneProject(this.props.params.id);
   },
 
@@ -40,7 +40,7 @@ var ProjectDetail = React.createClass({
   render: function () {
     if (this.state.project === undefined) {
       return <div>Project does not exist :(</div>;
-    } 
+    }
 
     var currDate = new Date;
     var deadline = new Date(this.state.project.deadline);
